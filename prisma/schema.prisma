@@ -15,7 +15,9 @@ model Watch {
   price Int
   oldPrice Int?
   mainImg String
-  restImg String
+  Img1 String
+  Img2 String
+  Img3 String
   name String
   model String
   description String @db.VarChar(1000)
@@ -43,7 +45,6 @@ model Order {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
-
 enum Role {
   USER
   ADMIN
