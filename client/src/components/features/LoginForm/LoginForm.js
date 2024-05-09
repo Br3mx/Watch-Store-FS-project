@@ -23,7 +23,7 @@ const LoginForm = () => {
     };
 
     setStatus('loading');
-    fetch(`${API_URL}/login`, options)
+    fetch(`${API_URL}/auth/login`, options)
       .then((res) => {
         if (res.status === 200) {
           setStatus('success');

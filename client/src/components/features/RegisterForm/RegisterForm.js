@@ -41,7 +41,7 @@ const RegisterForm = () => {
 
       setStatus('loading');
 
-      fetch(`${API_URL}/register`, options).then((res) => {
+      fetch(`${API_URL}/auth/register`, options).then((res) => {
         if (res.status === 201) {
           setStatus('success');
         } else if (res.status === 400) {
