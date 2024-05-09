@@ -44,7 +44,7 @@ export class UserService {
       });
     } catch (err) {
       if (err.code === 'P2002')
-        throw new ConflictException('The email is already taken');
+        throw new ConflictException('The email/login is already taken');
     }
   }
 

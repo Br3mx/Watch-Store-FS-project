@@ -17,6 +17,8 @@ export class AuthService {
     const hashedPassword = await bcrypt.hash(registrationData.password, 10);
     const userData = {
       email: registrationData.email,
+      login: registrationData.login,
+      phone: registrationData.phone,
     };
 
     this.userService.addNewUser(userData, hashedPassword);
@@ -34,7 +36,12 @@ export class AuthService {
     return null;
   }
   public async createSession(user: any) {
-    const payload = { email: user.email, sub: user.id };
+    const payload = {
+      email: user.email,
+      login: user.login,
+      phone: user.phone,
+      sub: user.id,
+    };
 
     const accessToken = this.jwtService.sign(payload, {
       secret: this.configService.get('jwt.secret'),

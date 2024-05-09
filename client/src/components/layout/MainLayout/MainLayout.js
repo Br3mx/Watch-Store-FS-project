@@ -3,11 +3,11 @@ import Footer from '../Footer/Footer';
 import { Container } from 'react-bootstrap';
 
 const MainLayout = ({ children }) => (
-  <Container>
+  <>
     <NavBar />
-    {children}
+    <Container>{children}</Container>
     <Footer />
-  </Container>
+  </>
 );
 
 export default MainLayout;

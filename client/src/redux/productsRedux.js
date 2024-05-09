@@ -17,7 +17,7 @@ export const setError = (payload) => ({ type: ERROR, payload });
 export const loadProdRequest = () => async (dispatch) => {
   try {
     const res = await axios.get(`${API_URL}/products`);
-    dispatch(loadAds(res.data));
+    dispatch(loadProd(res.data));
   } catch (e) {
     dispatch(setError(e.message));
   }

@@ -1,9 +1,9 @@
 import { Row, Col } from 'react-bootstrap';
-
+import style from './Footer.module.scss';
 const Footer = () => {
   return (
-    <footer className="bg-primary text-white my-4 py-4 rounded">
-      <Row className="align-items-center">
+    <footer className={`${style.footer} text-white my-4 py-4`}>
+      <Row className={` align-items-center`}>
         <Col className="text-center" xs={12} md={4}>
           O-CLOCK &copy;
         </Col>

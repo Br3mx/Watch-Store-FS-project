@@ -2,19 +2,20 @@ import { Navbar, Nav } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getUser } from '../../../redux/userRedux';
-
+import style from './NavBar.module.scss';
+import logo from './icon/logo764.png';
 const NavBar = () => {
   const user = useSelector(getUser);
 
   return (
-    <Navbar bg="primary" data-bs-theme="primary" className="rounded my-4 px-4">
+    <Navbar data-bs-theme="primary" className={`${style.navbar}  px-5`}>
       <Navbar.Brand
         as={Link}
         to="/"
-        className="text-white"
+        className={`${style.content}`}
         style={{ textDecoration: 'none' }}
       >
-        Home
+        <img src={logo} />
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-end">
@@ -23,7 +24,7 @@ const NavBar = () => {
             <Nav.Link
               as={Link}
               to="/login"
-              className="text-white"
+              className={`${style.content}`}
               style={{ textDecoration: 'none' }}
             >
               Sign In
@@ -33,7 +34,7 @@ const NavBar = () => {
             <Nav.Link
               as={Link}
               to="/logout"
-              className="text-white"
+              className={`${style.content}`}
               style={{ textDecoration: 'none' }}
             >
               Sign Out
@@ -43,7 +44,7 @@ const NavBar = () => {
             <Nav.Link
               as={Link}
               to="/register"
-              className="text-white"
+              className={`${style.content}`}
               style={{ textDecoration: 'none' }}
             >
               Sign Up

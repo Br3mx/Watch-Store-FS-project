@@ -52,9 +52,11 @@ enum Role {
 
 model User {
   id       String    @id @default(uuid())
-  email    String    @unique
+  login    String    @unique
+  email String @unique
   role     Role      @default(USER)
   password Password?
+  phone Int
 }
 
 model Password {
