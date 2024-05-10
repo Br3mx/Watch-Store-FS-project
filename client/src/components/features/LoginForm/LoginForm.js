@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Form, Button, Alert, Spinner } from 'react-bootstrap';
+import { Form, Alert, Spinner } from 'react-bootstrap';
 import { API_URL } from '../../../config';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../../redux/userRedux';
+import Button1 from '../Button/Button';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -88,9 +89,7 @@ const LoginForm = () => {
         />
       </Form.Group>
 
-      <Button variant="primary" type="submit">
-        Sign In
-      </Button>
+      <Button1 type="submit">Sign In</Button1>
     </Form>
   );
 };
