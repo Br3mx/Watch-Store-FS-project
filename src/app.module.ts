@@ -1,7 +1,7 @@
 import {
   MiddlewareConsumer,
-  NestModule,
   Module,
+  NestModule,
   RequestMethod,
 } from '@nestjs/common';
 import { AppController } from './app.controller';
@@ -15,6 +15,7 @@ import configuration from './config/configuration';
 import { PrismaService } from './shared/services/prisma.service';
 import * as cors from 'cors';
 import { OrdersModule } from './orders/orders.module';
+
 @Module({
   imports: [
     ProductsModule,
@@ -32,9 +33,8 @@ import { OrdersModule } from './orders/orders.module';
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer): void {
-    consumer.apply(cors()).forRoutes({
-      path: '*',
-      method: RequestMethod.ALL,
-    });
+    consumer
+      .apply(cors({ credentials: true, origin: 'http://localhost:3000' }))
+      .forRoutes({ path: '*', method: RequestMethod.ALL });
   }
 }

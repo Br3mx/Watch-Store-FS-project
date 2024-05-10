@@ -1,4 +1,12 @@
-import { IsString, IsNotEmpty, IsEmail, Length, IsInt } from 'class-validator';
+import {
+  IsString,
+  IsNotEmpty,
+  IsEmail,
+  Length,
+  IsInt,
+  Min,
+  Max,
+} from 'class-validator';
 import { Match } from 'src/utils/match.decorator';
 
 export class RegisterDTO {

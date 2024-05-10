@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import { Form, Button, Alert, Spinner } from 'react-bootstrap';
+import { Form, Alert, Spinner, Button } from 'react-bootstrap';
 import { API_URL } from '../../../config';
 import style from './RegisterForm.module.scss';
+import Button1 from '../Button/Button.js';
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
     login: '',
+    email: '',
     password: '',
     repeatPassword: '', // Dodajemy pole repeatPassword
     phone: '',
@@ -19,6 +21,8 @@ const RegisterForm = () => {
     e.preventDefault();
     const newErrors = {};
     if (!formData.login) newErrors.login = 'Login is required';
+    if (!formData.email) newErrors.email = 'email is required';
+    if (!formData.email.includes('@')) newErrors.email = "'@' missing";
     if (!formData.password) newErrors.password = 'Password is required';
     if (!formData.repeatPassword)
       newErrors.repeatPassword = 'Repeat Password is required';
@@ -26,11 +30,18 @@ const RegisterForm = () => {
     if (formData.password !== formData.repeatPassword) {
       newErrors.repeatPassword = 'Passwords do not match';
     }
+    if (formData.phone.length < 9) {
+      newErrors.phone = 'Min 9 numbers';
+    }
+    if (formData.phone.length > 12) {
+      newErrors.phone = 'Max 12 numbers';
+    }
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
       const fd = new FormData();
       fd.append('login', formData.login);
+      fd.append('email', formData.email);
       fd.append('password', formData.password);
       fd.append('phoneNumber', formData.phone);
       fd.append('repeatPassword', formData.repeatPassword);
@@ -121,6 +132,22 @@ const RegisterForm = () => {
           {errors.login}
         </Form.Control.Feedback>
       </Form.Group>
+      {/* Email */}
+
+      <Form.Group className="mb-3" controlId="formEmail">
+        <Form.Label>Email</Form.Label>
+        <Form.Control
+          type="text"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          placeholder="Enter email"
+          isInvalid={errors.email}
+        />
+        <Form.Control.Feedback type="invalid">
+          {errors.email}
+        </Form.Control.Feedback>
+      </Form.Group>
 
       {/* Password */}
       <Form.Group className="mb-3" controlId="formPassword">
@@ -187,9 +214,9 @@ const RegisterForm = () => {
         </div>
       </Form.Group>
 
-      <Button variant="primary" type="submit">
+      <Button1 className={style.Button} type="submit">
         Submit
-      </Button>
+      </Button1>
     </Form>
   );
 };
