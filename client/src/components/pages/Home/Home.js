@@ -1,4 +1,6 @@
+import AllProducts from '../../features/AllProducts/AllProducts';
+
 const Home = () => {
-  return <>Home</>;
+  return <AllProducts />;
 };
 export default Home;

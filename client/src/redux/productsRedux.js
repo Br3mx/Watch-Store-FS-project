@@ -2,7 +2,7 @@ import { API_URL } from '../config';
 import axios from 'axios';
 
 /* selectors */
-export const getWatch = ({ products }) => products;
+export const getWatch = ({ watch }) => watch;
 // actions
 const createActionName = (name) => `app/products/${name}`;
 
@@ -24,6 +24,7 @@ export const loadProdRequest = () => async (dispatch) => {
 };
 
 /* reducer */
+
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
     case LOAD_PROD:
