@@ -4,7 +4,7 @@ import { getWatch, loadProdRequest } from '../../../redux/productsRedux';
 import { useEffect } from 'react';
 
 const AllProducts = () => {
-  const watches = useSelector(getWatch);
+  const products = useSelector(getWatch);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -13,11 +13,11 @@ const AllProducts = () => {
   return (
     <div>
       <h1>All Watches</h1>
-      {watches ? (
+      {products ? (
         <ul>
-          {watches.map((watch) => (
-            <li key={watch._id}>
-              {watch.name} - {watch.price}
+          {products.map((product) => (
+            <li key={product._id}>
+              {product.name} - {product.price}
             </li>
           ))}
         </ul>
