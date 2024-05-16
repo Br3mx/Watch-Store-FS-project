@@ -2,7 +2,7 @@ import { API_URL } from '../config';
 import axios from 'axios';
 
 /* selectors */
-export const getWatch = ({ products }) => products;
+export const getWatch = ({ products }) => products.data;
 // actions
 const createActionName = (name) => `app/products/${name}`;
 

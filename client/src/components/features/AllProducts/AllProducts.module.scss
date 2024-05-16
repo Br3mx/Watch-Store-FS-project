@@ -1,0 +1,12 @@
+@import '../../../styles/settings.scss';
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  font-family: $font-text;
+}
+
+.price {
+  font-size: 1rem;
+  color: $color-warning;
+}
