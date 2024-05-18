@@ -51,13 +51,20 @@ const AllProducts = () => {
                   <Card.Text className="mb-3 text-muted">
                     {product.model}
                   </Card.Text>
-
-                  <Link to={`/products/${product.id}`}>
-                    <Button1 variant="primary">Read more...</Button1>
-                  </Link>
-                  <Card.Text className={style.price}>
-                    Price: {product.oldPrice} {product.price}
-                  </Card.Text>
+                  <Card className={style.price}>
+                    <Card.Text className={style.label}>Price:</Card.Text>
+                    <Card.Text className={style.oldPrice}>
+                      {product.oldPrice}
+                    </Card.Text>
+                    <Card.Text className={style.newPrice}>
+                      {product.price}
+                    </Card.Text>
+                  </Card>
+                  <div className={style.button}>
+                    <Link to={`/products/${product.id}`}>
+                      <Button1 variant="primary">Read more...</Button1>
+                    </Link>
+                  </div>
                 </Card.Body>
               </Card>
             </Col>
