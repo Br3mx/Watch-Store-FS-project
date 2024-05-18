@@ -5,5 +5,12 @@
   font-size: 1rem;
   .content {
     color: $color-light;
+    &:hover {
+      color: $color-main;
+    }
+  }
+  .cart {
+    color: $color-main;
+    font-size: 1.3rem;
   }
 }

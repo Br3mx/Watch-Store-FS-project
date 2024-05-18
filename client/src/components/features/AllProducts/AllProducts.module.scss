@@ -10,3 +10,59 @@
   font-size: 1rem;
   color: $color-warning;
 }
+
+.contCard {
+  .contImg {
+    &:hover {
+      transition: 0.5s;
+      .cardImage {
+        cursor: pointer;
+        filter: brightness(0.8) blur(3px);
+      }
+      .overlay {
+        transition: 1s;
+        display: block;
+      }
+    }
+    .overlay {
+      position: absolute;
+      top: 23%;
+      left: 13%;
+      display: none;
+      z-index: 1;
+      .icons {
+        font-size: 30px;
+        .icon:nth-of-type(1) {
+          margin-right: 20px;
+        }
+
+        .icon {
+          cursor: pointer;
+          border-radius: 10px;
+          background-color: white;
+          width: 30%;
+          height: 2.5rem;
+          padding: 7px;
+        }
+        .icon:nth-of-type(1):hover {
+          transition: 0.5s;
+          color: $color-main;
+          background-color: $color-dark;
+        }
+        .icon:nth-of-type(2):hover {
+          transition: 0.5s;
+          color: $color-warning;
+          background-color: $color-dark;
+        }
+      }
+    }
+    .cardImage {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      filter: brightness(1);
+      transition: filter 0.3s ease;
+    }
+  }
+}

@@ -15,6 +15,8 @@ import configuration from './config/configuration';
 import { PrismaService } from './shared/services/prisma.service';
 import * as cors from 'cors';
 import { OrdersModule } from './orders/orders.module';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 @Module({
   imports: [

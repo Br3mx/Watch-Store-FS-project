@@ -15,6 +15,7 @@ model Watch {
   price Int
   oldPrice Int?
   mainImg String
+  folder String
   Img1 String
   Img2 String
   Img3 String

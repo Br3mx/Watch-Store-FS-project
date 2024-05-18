@@ -1,11 +1,11 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { getWatch, loadProdRequest } from '../../../redux/productsRedux';
-import { useEffect } from 'react';
-import { Row, Card, Col, Button } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+import { getWatch } from '../../../redux/productsRedux';
+import { Row, Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import style from './AllProducts.module.scss';
 import { IMGS_URL } from '../../../config';
 import Button1 from '../Button/Button';
+import { FaHeart, FaShoppingCart } from 'react-icons/fa';
 const AllProducts = () => {
   const products = useSelector(getWatch);
 
@@ -26,12 +26,26 @@ const AllProducts = () => {
               xl={3}
               className="mb-4"
             >
-              <Card style={{ width: '100%', margin: '0', padding: '0' }}>
-                <Card.Img
-                  variant="top"
-                  className={style.cardImage}
-                  src={`${IMGS_URL}/adriatica/${product.mainImg}`}
-                />
+              <Card
+                className={style.contCard}
+                style={{ width: '100%', margin: '0', padding: '0' }}
+              >
+                <Row className={style.contImg}>
+                  <Card.Img
+                    variant="top"
+                    className={style.cardImage}
+                    src={`${IMGS_URL}/${product.folder}/${product.mainImg}`}
+                  />
+                  <div className={style.overlay}>
+                    {' '}
+                    {/* Dodanie nakładki (overlay) */}
+                    <div className={style.icons}>
+                      <FaShoppingCart className={style.icon} />{' '}
+                      {/* Ikona dodania do koszyka */}
+                      <FaHeart className={style.icon} /> {/* Ikona serduszka */}
+                    </div>
+                  </div>
+                </Row>
                 <Card.Body>
                   <Card.Title>{product.name}</Card.Title>
                   <Card.Text className="mb-3 text-muted">

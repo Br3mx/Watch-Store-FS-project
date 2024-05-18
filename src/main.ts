@@ -16,6 +16,7 @@ async function bootstrap() {
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
+
   app.use('/public', express.static('public'));
 
   await app.enableShutdownHooks();

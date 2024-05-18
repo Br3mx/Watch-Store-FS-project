@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { getUser } from '../../../redux/userRedux';
 import style from './NavBar.module.scss';
 import logo from './icon/logo764.png';
+import { FaShoppingCart } from 'react-icons/fa';
 const NavBar = () => {
   const user = useSelector(getUser);
 
@@ -48,6 +49,18 @@ const NavBar = () => {
               style={{ textDecoration: 'none' }}
             >
               Sign Up
+            </Nav.Link>
+          )}
+          {!user && (
+            <Nav.Link
+              as={Link}
+              to="/cart-products"
+              className={`${style.content}`}
+              style={{ textDecoration: 'none' }}
+            >
+              <div className={style.iconCont}>
+                <FaShoppingCart className={style.cart} />
+              </div>
             </Nav.Link>
           )}
         </Nav>
