@@ -1,0 +1,41 @@
+@import '../../../styles/settings.scss';
+
+.catCont {
+  width: 100%; // Ustawienie szerokości kontenera na 100%
+  padding: 0; // Usuń ewentualne paddingi
+  margin-left: 50%;
+  padding-bottom: 4rem;
+  margin: 0; // Usuń ewentualne marginesy
+  position: absolute;
+  bottom: 15%;
+  left: 47%;
+}
+.title {
+  margin-left: 18.5%;
+  margin-bottom: 2%;
+}
+.liCont {
+  list-style: none;
+  display: flex;
+  width: 100%; // Ustawienie szerokości na 100%
+  padding: 0; // Usuń paddingi
+  margin: 0; // Usuń marginesy
+}
+
+.liCont li {
+  display: inline-block; // Ustaw elementy w jednej linii
+  margin: 0 1.3rem;
+  padding: 0rem 4rem; // Dodaj padding, aby tło wyglądało jak przycisk
+  font-size: 1.5rem;
+  border: 2px solid $color-dark;
+  border-radius: 0.5rem; // Zaokrąglenie rogów, aby wyglądało jak przycisk
+  background-color: $color-light; // Tło przycisku
+  text-align: center; // Wyśrodkowanie tekstu wewnątrz <li>
+  cursor: pointer; // Kursor jak na przyciskach
+  transition: background-color 0.3s ease; // Animacja zmiany koloru tła
+
+  &:hover {
+    background-color: $color-dark; // Kolor tła po najechaniu
+    color: $color-main; // Kolor tekstu po najechaniu
+  }
+}

@@ -6,14 +6,19 @@ import style from './AllProducts.module.scss';
 import { IMGS_URL } from '../../../config';
 import Button1 from '../Button/Button';
 import { FaHeart, FaShoppingCart } from 'react-icons/fa';
+import logo from './icon/wristwatch_4305526.png';
+import Categories from '../Categories/Categories';
+
 const AllProducts = () => {
   const products = useSelector(getWatch);
 
   return (
     <Row>
-      <Card.Title className={`${style.title} mt-4 mb-4`}>
-        All Watches
-      </Card.Title>
+      <div className={style.logoCat}>
+        <img className={style.logo} src={logo} />
+
+        <Categories className={style.cat} />
+      </div>
       {products ? (
         <Row>
           {products.map((product) => (
@@ -37,12 +42,9 @@ const AllProducts = () => {
                     src={`${IMGS_URL}/${product.folder}/${product.mainImg}`}
                   />
                   <div className={style.overlay}>
-                    {' '}
-                    {/* Dodanie nakładki (overlay) */}
                     <div className={style.icons}>
-                      <FaShoppingCart className={style.icon} />{' '}
-                      {/* Ikona dodania do koszyka */}
-                      <FaHeart className={style.icon} /> {/* Ikona serduszka */}
+                      <FaShoppingCart className={style.icon} />
+                      <FaHeart className={style.icon} />
                     </div>
                   </div>
                 </Row>
