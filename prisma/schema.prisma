@@ -20,6 +20,7 @@ model Watch {
   Img2 String
   Img3 String
   name String
+  category String
   model String
   description String @db.VarChar(1000)
 

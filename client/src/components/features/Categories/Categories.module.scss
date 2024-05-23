@@ -10,6 +10,11 @@
   bottom: 15%;
   left: 47%;
 }
+button {
+  border: none;
+  background-color: transparent;
+  cursor: none;
+}
 .title {
   margin-left: 18.5%;
   margin-bottom: 2%;
@@ -25,17 +30,22 @@
 .liCont li {
   display: inline-block; // Ustaw elementy w jednej linii
   margin: 0 1.3rem;
-  padding: 0rem 4rem; // Dodaj padding, aby tło wyglądało jak przycisk
+  padding: 0rem 4rem;
   font-size: 1.5rem;
   border: 2px solid $color-dark;
-  border-radius: 0.5rem; // Zaokrąglenie rogów, aby wyglądało jak przycisk
+  border-radius: 0.5rem;
   background-color: $color-light; // Tło przycisku
   text-align: center; // Wyśrodkowanie tekstu wewnątrz <li>
   cursor: pointer; // Kursor jak na przyciskach
-  transition: background-color 0.3s ease; // Animacja zmiany koloru tła
+  transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: $color-dark; // Kolor tła po najechaniu
-    color: $color-main; // Kolor tekstu po najechaniu
+    background-color: $color-dark;
+
+    color: $color-main;
+  }
+  &.active {
+    background-color: $color-main;
+    color: $color-dark;
   }
 }

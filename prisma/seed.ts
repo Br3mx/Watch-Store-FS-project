@@ -13,6 +13,7 @@ function getWatches() {
       Img2: 'adriatica-rest1.jpg',
       Img3: 'adriatica-rest2.jpg',
       name: 'ADRIATICA CLASSIC',
+      category: 'Women',
       model: 'A3601.1111QFZ',
       description:
         'Zegarek damski Adriatica A3601.1111QFZ to wyrafinowany wybór dla kobiety, która szuka połączenia elegancji i precyzji szwajcarskiego rzemiosła. Koperta wykonana z wysokiej jakości stali szlachetnej 316L, pokryta złotym odcieniem, jest wykończona zdobieniami z kryształków Swarovskiego, dodając zegarkowi luksusowego blasku. Tarcza wzbogacona o funkcjonalne sub-tarcze z datownikiem dni miesiąca i tygodnia oraz cykl księżycowy, co sprawia, że zegarek jest nie tylko piękny, ale i użyteczny. Wytrzymałe szafirowe szkiełko gwarantuje ochronę przed uszkodzeniami, a bransoleta, również ze stali szlachetnej, łączy w sobie wytrzymałość i ponadczasową estetykę. Mechanizm kwarcowy Ronda 706 SWISS MADE zapewnia niezawodną precyzję, a wodoszczelność do 50 metrów pozwala na bezproblemowe użytkowanie w codziennych sytuacjach',
@@ -27,6 +28,7 @@ function getWatches() {
       Img2: 'luminox-rest1.jpg',
       Img3: 'luminox-rest2.jpg',
       name: 'LUMINOX',
+      category: 'Men',
       model: 'XS.0321.BO.L',
       description:
         'Luminox Leatherback Sea Turtle Giant 0320 XS.0321.BO.L to kolejna propozycja marki Luminox, znanej z survivalowych modeli. Ten casualowy zegarek męski działa w oparciu o precyzyjny mechanizm kwarcowy Ronda 515 Swiss Made. Na analogowej tarczy umieszczone zostały datownik dni miesiąca, subtarcza czasu dobowego oraz silne podświetlenie trytowe. Całość zabezpieczona jest utwardzanym szkłem mineralnym, osadzona w kopercie z CARBONOX-u i umocowana na gumowym pasku. Urządzenie utrzymano w czarnej kolorystyce. Wodoszczelność rzędu 100 metrów zapewnia ochronę zegarka podczas pływania powierzchniowego. Gwarancja producenta wynosi 2 lata na cały model i 10 lat na podświetlenie trytowe.',
@@ -41,6 +43,7 @@ function getWatches() {
       Img2: 'frederique-rest1.jpg',
       Img3: 'frederique-rest2.jpg',
       name: 'FREDERIQUE CONSTANT',
+      category: 'Men',
       model: 'FC-220SS5B6',
       description:
         'Zegarek męski Frederique Constant Classics FC-220SS5B6 to elegancki model pasujący do garnituru. Jednak doskonale dopełni również mniej oficjalny ubiór. Delikatny wygląd to zasługa połączenia srebrnej koperty ze stali szlachetnej ze srebrną tarczą zdobioną szlifem słonecznym. Klasyczny design dopełniono brązowym paskiem uszytym ze skóry, który zapewnia tym samym doskonałą jakość i wygodę użytkowania. Użytkownik zegarka nie musi się martwić o zachlapanie urządzenia. Do zakupu dołączona jest 2-letnia gwarancja producenta oraz oryginalne pudełko.',
@@ -55,6 +58,7 @@ function getWatches() {
       Img2: 'tissot-rest1.jpg',
       Img3: 'tissot-rest2.jpg',
       name: 'TISSOT',
+      category: 'Men',
       model: 'T006.407.16.033.00',
       description:
         'Zegarek męski Tissot T006.407.16.033.00 z serii Le Locle to model ceniony na całym świecie. Wyposażono go w mechanizm automatyczny Powermatic 80 Swiss Made oraz twarde szafirowe szkiełko. Wodoszczelność produktu wynosi 30 metrów. Koperta zegarka T0064071603300 została wykonana z wysokiej jakości stali szlachetnej 316L. Gwarancja producenta liczy 2 lata i jest ważna od daty zakupu',
@@ -69,6 +73,7 @@ function getWatches() {
       Img2: 'certina-rest1.jpg',
       Img3: 'certina-rest2.jpg',
       name: 'CERTINA',
+      category: 'Women',
       model: 'C033.051.22.118.01',
       description:
         'Tradycyjne szwajcarskie zegarmistrzostwo, klasyczna kolorystyka, materiały premium i nowoczesne rozwiązania – taki właśnie jest damski zegarek DS-8 Lady COSC C033.051.22.118.01 od marki Certina. Produkt, dzięki srebrno-złotej stylistyce, wkomponuje się w wiele formalnych i codziennych stylizacji. Subtelny kobiecy projekt podkreśla tarcza z masy perłowej. Model jest wysokiej klasy chronometrem wyposażonym w mechanizm kwarcowy z technologią Precidrive™ i funkcją datownika. Jego precyzję potwierdza certyfikat COSC. Zegarek Certina C0330512211801 został wyposażony w system zabezpieczeń Double Security. Jest wodoszczelny w klasie 10 ATM.',

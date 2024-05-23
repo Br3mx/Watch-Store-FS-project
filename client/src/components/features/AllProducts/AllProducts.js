@@ -8,20 +8,35 @@ import Button1 from '../Button/Button';
 import { FaHeart, FaShoppingCart } from 'react-icons/fa';
 import logo from './icon/wristwatch_4305526.png';
 import Categories from '../Categories/Categories';
+import { useState } from 'react';
+import Logo from '../Logo/Logo';
 
 const AllProducts = () => {
   const products = useSelector(getWatch);
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const filteredProducts =
+    selectedCategory === 'All'
+      ? products
+      : products.filter((product) => product.category === selectedCategory);
 
   return (
     <Row>
       <div className={style.logoCat}>
         <img className={style.logo} src={logo} />
-
-        <Categories className={style.cat} />
+        <Categories
+          className={style.cat}
+          onCategoryChange={handleCategoryChange}
+        />
       </div>
-      {products ? (
+
+      {filteredProducts ? (
         <Row>
-          {products.map((product) => (
+          {filteredProducts.map((product) => (
             <Col
               key={product.id}
               xs={12}

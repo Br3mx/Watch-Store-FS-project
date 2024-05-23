@@ -5,6 +5,7 @@ import { getUser } from '../../../redux/userRedux';
 import style from './NavBar.module.scss';
 import logo from './icon/logo764.png';
 import { FaClock, FaShoppingCart } from 'react-icons/fa';
+import Logo from '../../features/Logo/Logo';
 const NavBar = () => {
   const user = useSelector(getUser);
 
@@ -18,12 +19,7 @@ const NavBar = () => {
       >
         <img src={logo} />
       </Navbar.Brand>
-      <div className={style.oclock}>
-        <h1>
-          <FaClock />
-        </h1>
-        <h1>- CLOCK</h1>
-      </div>
+      <Logo />
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-end">
         <Nav>
