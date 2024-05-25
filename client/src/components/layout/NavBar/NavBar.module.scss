@@ -3,6 +3,7 @@
 .navbar {
   background-color: $color-dark;
   font-size: 1rem;
+
   .content {
     color: $color-light;
     &:hover {
@@ -13,20 +14,15 @@
     color: $color-main;
     font-size: 1.3rem;
   }
-  .oclock {
-    margin-left: 40%;
-    display: flex;
-    justify-content: center; // Wyśrodkowanie h1 wewnątrz .oclock
-    align-items: center; // Wyśrodkowanie h1 w pionie, jeśli potrzebne
-    color: $color-main;
+  .colapse {
+    margin-left: 0;
+    padding-left: 0;
+  }
 
-    h1 {
-      margin: 0; // Usuń domyślne marginesy
-      display: flex;
-      align-items: center; // Wyśrodkowanie ikony i tekstu w pionie
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-        'Lucida Sans', Arial, sans-serif;
-      padding-right: 8px;
-    }
+  .contLog {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
   }
 }

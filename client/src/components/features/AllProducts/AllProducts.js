@@ -9,7 +9,6 @@ import { FaHeart, FaShoppingCart } from 'react-icons/fa';
 import logo from './icon/wristwatch_4305526.png';
 import Categories from '../Categories/Categories';
 import { useState } from 'react';
-import Logo from '../Logo/Logo';
 
 const AllProducts = () => {
   const products = useSelector(getWatch);
@@ -51,11 +50,13 @@ const AllProducts = () => {
                 style={{ width: '100%', margin: '0', padding: '0' }}
               >
                 <Row className={style.contImg}>
-                  <Card.Img
-                    variant="top"
-                    className={style.cardImage}
-                    src={`${IMGS_URL}/${product.folder}/${product.mainImg}`}
-                  />
+                  <Link to={`/products/${product.id}`}>
+                    <Card.Img
+                      variant="top"
+                      className={style.cardImage}
+                      src={`${IMGS_URL}/${product.folder}/${product.mainImg}`}
+                    />
+                  </Link>
                   <div className={style.overlay}>
                     <div className={style.icons}>
                       <FaShoppingCart className={style.icon} />
@@ -74,7 +75,7 @@ const AllProducts = () => {
                       {product.oldPrice}
                     </Card.Text>
                     <Card.Text className={style.newPrice}>
-                      {product.price}
+                      $ {product.price}
                     </Card.Text>
                   </Card>
                   <div className={style.button}>

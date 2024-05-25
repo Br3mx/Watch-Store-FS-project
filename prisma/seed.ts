@@ -26,7 +26,7 @@ function getWatches() {
       folder: 'luminox',
       Img1: 'luminox-rest.jpg',
       Img2: 'luminox-rest1.jpg',
-      Img3: 'luminox-rest2.jpg',
+      Img3: 'luminox-rest2.png',
       name: 'LUMINOX',
       category: 'Men',
       model: 'XS.0321.BO.L',

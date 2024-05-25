@@ -1,4 +1,6 @@
+import OrderProductForm from '../../features/OrderProductForm/OrderProductForm';
+
 const OrderFromPages = () => {
-  return <>OrderFromPages</>;
+  return <OrderProductForm />;
 };
 export default OrderFromPages;

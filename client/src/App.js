@@ -11,6 +11,8 @@ import NotFound from './components/pages/NotFound/NotFound';
 import Login from './components/pages/Login/Login';
 import Register from './components/pages/Register/Register';
 import Logout from './components/pages/Logout/Logout';
+import OrderFromPages from './components/pages/OrderFormPages/OrderFormPages';
+import OrderConfirmation from './components/pages/OrderConfirmation/OrderConfirmation';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -29,6 +31,8 @@ const App = () => {
         <Route path="/logout" element={<Logout />} />
         <Route path="/products/:id" element={<SingleProduct />} />
         <Route path="/cart-products" element={<CartProductPages />} />
+        <Route path="/order/:productId" element={<OrderFromPages />} />
+        <Route path="/order-confirmation" component={<OrderConfirmation />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </MainLayout>

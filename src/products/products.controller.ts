@@ -18,7 +18,6 @@ export class ProductsController {
   getAll(): any {
     return this.productsService.getAll();
   }
-  @UseGuards(JwtAuthGuard)
   @Get('/:id')
   async getById(@Param('id', new ParseUUIDPipe()) id: string) {
     const prod = await this.productsService.getById(id);

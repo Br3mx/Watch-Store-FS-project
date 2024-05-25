@@ -1,8 +1,11 @@
 import { API_URL } from '../config';
 import axios from 'axios';
+import initialState from './initialState';
 
 /* selectors */
 export const getWatch = ({ products }) => products.data;
+export const getProductById = ({ products }, id) =>
+  products.data.find((product) => product.id === id);
 // actions
 const createActionName = (name) => `app/products/${name}`;
 
@@ -25,7 +28,7 @@ export const loadProdRequest = () => async (dispatch) => {
 
 /* reducer */
 
-export default function reducer(statePart = [], action = {}) {
+export default function reducer(statePart = initialState, action = {}) {
   switch (action.type) {
     case LOAD_PROD:
       return { ...statePart, data: action.payload };

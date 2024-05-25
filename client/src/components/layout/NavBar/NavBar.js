@@ -19,9 +19,17 @@ const NavBar = () => {
       >
         <img src={logo} />
       </Navbar.Brand>
-      <Logo />
+      <Link
+        to={'/'}
+        className={style.contLog}
+        style={{ textDecoration: 'none' }}
+      >
+        <Logo />
+      </Link>
       <Navbar.Toggle />
-      <Navbar.Collapse className="justify-content-end">
+      <Navbar.Collapse
+        className={` ${style.collapse} justify-content-end px-3`}
+      >
         <Nav>
           {!user && (
             <Nav.Link
