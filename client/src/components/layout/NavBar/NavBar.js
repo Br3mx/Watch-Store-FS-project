@@ -8,6 +8,8 @@ import { FaClock, FaHeart, FaShoppingCart } from 'react-icons/fa';
 import Logo from '../../features/Logo/Logo';
 const NavBar = () => {
   const user = useSelector(getUser);
+  const cart = useSelector((state) => state.cart);
+  const cartCount = cart.length;
 
   return (
     <Navbar data-bs-theme="primary" className={`${style.navbar}  px-5`}>
@@ -69,7 +71,10 @@ const NavBar = () => {
               style={{ textDecoration: 'none' }}
             >
               <div className={style.iconCont}>
-                <FaShoppingCart className={style.cart} />
+                <FaShoppingCart className={style.cartIcon} />
+                {cartCount > 0 && (
+                  <span className={style.cartCount}>{cartCount}</span>
+                )}
               </div>
             </Nav.Link>
           )}

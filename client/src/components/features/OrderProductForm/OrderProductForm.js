@@ -5,6 +5,7 @@ import { IMGS_URL, API_URL } from '../../../config';
 import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
 import { getProductById } from '../../../redux/productsRedux';
 import { useSelector } from 'react-redux';
+import Button1 from '../Button/Button';
 
 const OrderProductForm = () => {
   const { productId } = useParams();
@@ -135,9 +136,7 @@ const OrderProductForm = () => {
                   />
                 </Form.Group>
 
-                <Button variant="primary" type="submit" className="w-100">
-                  Submit Order
-                </Button>
+                <Button1>Submit Order</Button1>
               </Form>
             </Card.Body>
           </Card>

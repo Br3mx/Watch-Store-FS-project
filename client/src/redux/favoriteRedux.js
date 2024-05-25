@@ -1,6 +1,6 @@
 import initialState from './initialState';
 
-const createActionName = (name) => `app/products/${name}`;
+const createActionName = (name) => `app/favorites/${name}`;
 export const ADD_TO_FAVORITES = createActionName('ADD_TO_FAVORITES');
 export const REMOVE_FROM_FAVORITES = createActionName('REMOVE_FROM_FAVORITES');
 

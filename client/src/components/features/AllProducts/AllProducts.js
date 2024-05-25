@@ -10,6 +10,7 @@ import logo from './icon/wristwatch_4305526.png';
 import Categories from '../Categories/Categories';
 import { useState } from 'react';
 import ButtonFavorite from '../ButtonFavorite/ButtonFavorite';
+import ButtonCart from '../ButtonCart/ButtonCart';
 
 const AllProducts = () => {
   const products = useSelector(getWatch);
@@ -59,8 +60,11 @@ const AllProducts = () => {
                     />
                   </Link>
                   <div className={style.overlay}>
-                    <div className={style.icons}>
-                      <FaShoppingCart className={style.icon} />
+                    <div
+                      className={style.icons}
+                      style={{ display: 'flex', gap: '10%' }}
+                    >
+                      <ButtonCart product={product} showLabel={false} />
                       <ButtonFavorite product={product} showLabel={false} />
                     </div>
                   </div>

@@ -8,6 +8,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 import BuyNow from '../../features/BuyNow/BuyNow';
 
 import ButtonFavorite from '../../features/ButtonFavorite/ButtonFavorite';
+import ButtonCart from '../../features/ButtonCart/ButtonCart';
 
 const SingleProduct = () => {
   const { id } = useParams(); // Pobieramy ID produktu z parametrów routingu
@@ -39,8 +40,7 @@ const SingleProduct = () => {
                 </Card.Text>
                 <div className={style.overlay}>
                   <div className={style.icons}>
-                    <FaShoppingCart className={style.icon} />
-                    <h6>Add to Cart</h6>
+                    <ButtonCart product={product} />
                     <ButtonFavorite product={product} />
                   </div>
                 </div>

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { API_URL } from '../config';
+import initialState from './initialState';
 
 // SELECTORS
 export const getUser = ({ user }) => (user ? user.data : null);
@@ -32,8 +33,21 @@ export const loadLoggedUser = () => {
   };
 };
 
+export const logOutUser = () => {
+  return async (dispatch) => {
+    try {
+      await axios.delete(`${API_URL}/auth/logout`, {
+        withCredentials: true,
+      });
+      dispatch(logOut());
+    } catch (e) {
+      console.log('error ', e);
+    }
+  };
+};
+
 // REDUCER
-const usersReducer = (statePart = [], action) => {
+export default function reducer(statePart = [initialState], action) {
   switch (action.type) {
     case LOG_IN:
       return { ...statePart, data: action.payload, error: null };
@@ -44,6 +58,4 @@ const usersReducer = (statePart = [], action) => {
     default:
       return statePart;
   }
-};
-
-export default usersReducer;
+}

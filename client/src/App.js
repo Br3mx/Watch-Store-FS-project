@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { loadProdRequest } from './redux/productsRedux';
-import { loadLoggedUser } from './redux/userRedux';
+import { loadLoggedUser, logOutUser } from './redux/userRedux';
 import MainLayout from './components/layout/MainLayout/MainLayout';
 import { Route, Routes } from 'react-router-dom';
 import Home from './components/pages/Home/Home';

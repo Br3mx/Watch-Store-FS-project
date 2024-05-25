@@ -27,7 +27,6 @@ export class UserController {
     return user;
   }
   @Delete(':id')
-  @UseGuards(AdminAuthGuard)
   @UseGuards(JwtAuthGuard)
   public async delete(@Param('id', new ParseUUIDPipe()) id: string) {
     if (!(await this.userService.getUsersById(id)))
