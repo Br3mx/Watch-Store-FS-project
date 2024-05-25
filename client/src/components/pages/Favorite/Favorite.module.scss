@@ -1,0 +1,30 @@
+.favoriteContainer {
+  padding: 10px;
+}
+
+.favoriteCard {
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+.cardImg {
+  height: 200px;
+
+  object-fit: contain;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.cardText {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.cardPrice {
+  font-size: 1rem;
+  color: #333;
+}

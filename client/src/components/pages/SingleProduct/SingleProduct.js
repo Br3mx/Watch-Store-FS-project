@@ -1,11 +1,13 @@
 import { useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getProductById } from '../../../redux/productsRedux'; // Upewnij się, że masz odpowiednią ścieżkę do selektora
 import { Card, Carousel, Col, Container, Row } from 'react-bootstrap';
 import style from './SingleProduct.module.scss';
 import { IMGS_URL } from '../../../config';
-import { FaHeart, FaShoppingCart } from 'react-icons/fa';
+import { FaShoppingCart } from 'react-icons/fa';
 import BuyNow from '../../features/BuyNow/BuyNow';
+
+import ButtonFavorite from '../../features/ButtonFavorite/ButtonFavorite';
 
 const SingleProduct = () => {
   const { id } = useParams(); // Pobieramy ID produktu z parametrów routingu
@@ -39,8 +41,7 @@ const SingleProduct = () => {
                   <div className={style.icons}>
                     <FaShoppingCart className={style.icon} />
                     <h6>Add to Cart</h6>
-                    <FaHeart className={style.icon} />
-                    <h6>Add to Favorite</h6>
+                    <ButtonFavorite product={product} />
                   </div>
                 </div>
               </Col>

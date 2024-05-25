@@ -13,6 +13,7 @@ import Register from './components/pages/Register/Register';
 import Logout from './components/pages/Logout/Logout';
 import OrderFromPages from './components/pages/OrderFormPages/OrderFormPages';
 import OrderConfirmation from './components/pages/OrderConfirmation/OrderConfirmation';
+import Favorite from './components/pages/Favorite/Favorite';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -32,7 +33,8 @@ const App = () => {
         <Route path="/products/:id" element={<SingleProduct />} />
         <Route path="/cart-products" element={<CartProductPages />} />
         <Route path="/order/:productId" element={<OrderFromPages />} />
-        <Route path="/order-confirmation" component={<OrderConfirmation />} />
+        <Route path="/order-confirmation" element={<OrderConfirmation />} />
+        <Route path="/favorite" element={<Favorite />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </MainLayout>

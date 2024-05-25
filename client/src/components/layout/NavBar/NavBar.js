@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { getUser } from '../../../redux/userRedux';
 import style from './NavBar.module.scss';
 import logo from './icon/logo764.png';
-import { FaClock, FaShoppingCart } from 'react-icons/fa';
+import { FaClock, FaHeart, FaShoppingCart } from 'react-icons/fa';
 import Logo from '../../features/Logo/Logo';
 const NavBar = () => {
   const user = useSelector(getUser);
@@ -70,6 +70,18 @@ const NavBar = () => {
             >
               <div className={style.iconCont}>
                 <FaShoppingCart className={style.cart} />
+              </div>
+            </Nav.Link>
+          )}
+          {!user && (
+            <Nav.Link
+              as={Link}
+              to="/favorite"
+              className={`${style.content}`}
+              style={{ textDecoration: 'none' }}
+            >
+              <div className={style.iconCont}>
+                <FaHeart className={style.heart} />
               </div>
             </Nav.Link>
           )}

@@ -9,6 +9,7 @@ import { FaHeart, FaShoppingCart } from 'react-icons/fa';
 import logo from './icon/wristwatch_4305526.png';
 import Categories from '../Categories/Categories';
 import { useState } from 'react';
+import ButtonFavorite from '../ButtonFavorite/ButtonFavorite';
 
 const AllProducts = () => {
   const products = useSelector(getWatch);
@@ -60,7 +61,7 @@ const AllProducts = () => {
                   <div className={style.overlay}>
                     <div className={style.icons}>
                       <FaShoppingCart className={style.icon} />
-                      <FaHeart className={style.icon} />
+                      <ButtonFavorite product={product} showLabel={false} />
                     </div>
                   </div>
                 </Row>
