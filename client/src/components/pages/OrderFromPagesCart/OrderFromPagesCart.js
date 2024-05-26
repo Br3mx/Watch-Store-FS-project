@@ -46,7 +46,7 @@ const OrderFromPagesCart = () => {
       const orderData = {
         products: cart.map((product) => ({
           productId: product.id,
-          quantity: quantities[product.id],
+          quantity: localQuantities[product.id],
           price: product.price,
         })),
         ...formData,
@@ -62,7 +62,7 @@ const OrderFromPagesCart = () => {
   };
 
   const subtotal = cart.reduce(
-    (acc, product) => acc + product.price * quantities[product.id],
+    (acc, product) => acc + product.price * localQuantities[product.id],
     0,
   );
   const shippingCost = 10;
@@ -109,7 +109,7 @@ const OrderFromPagesCart = () => {
                             <Form.Control
                               type="number"
                               name="quantity"
-                              value={quantities[product.id]}
+                              value={localQuantities[product.id]}
                               onChange={(e) =>
                                 handleQuantityChange(
                                   product.id,
@@ -121,9 +121,9 @@ const OrderFromPagesCart = () => {
                           </Form.Group>
                           <Card.Text className={style.cardTotal}>
                             <strong>Total:</strong> $
-                            {(product.price * quantities[product.id]).toFixed(
-                              2,
-                            )}
+                            {(
+                              product.price * localQuantities[product.id]
+                            ).toFixed(2)}
                           </Card.Text>
                         </Card.Body>
                       </Col>
