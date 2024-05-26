@@ -1,4 +1,5 @@
-import initialState from './initialState';
+// cartRedux.js
+import initialState from './initialState.js';
 
 // Actions
 const createActionName = (name) => `app/products/${name}`;
@@ -17,6 +18,7 @@ export const updateProductQuantity = (productId, quantity) => ({
 
 // Reducer
 export default function reducer(state = [initialState], action) {
+  // Changed here
   switch (action.type) {
     case ADD_TO_CART:
       const existingProduct = state.find(

@@ -1,3 +1,4 @@
+// CartProductPages.js
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Row, Col, Card, Form, Button, Image } from 'react-bootstrap';
@@ -23,7 +24,7 @@ const CartProductPages = () => {
   const handleQuantityChange = (productId, quantity) => {
     if (quantity < 1) return;
     setQuantities({ ...quantities, [productId]: quantity });
-    dispatch(updateProductQuantity({ productId, quantity }));
+    dispatch(updateProductQuantity(productId, quantity));
   };
 
   const handleRemove = (productId) => {

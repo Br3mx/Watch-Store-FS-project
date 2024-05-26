@@ -4,12 +4,12 @@ import { Row, Col, Card, Form, Button, Container } from 'react-bootstrap';
 import { IMGS_URL, API_URL } from '../../../config';
 import { updateProductQuantity } from '../../../redux/cartRedux'; // Assuming you have an action to update product quantity
 import style from './OrderFromPagesCart.module.scss';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const OrderFromPagesCart = () => {
-  const quantities = useSelector((state) => state.quantities);
-  console.log('quaintities order', quantities);
+  const location = useLocation();
+  const initialQuantities = location.state?.quantities || {};
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -21,11 +21,11 @@ const OrderFromPagesCart = () => {
     phone: '',
   });
 
-  const [localQuantities, setLocalQuantities] = useState(quantities);
+  const [localQuantities, setLocalQuantities] = useState(initialQuantities);
 
   useEffect(() => {
-    setLocalQuantities(quantities);
-  }, [quantities]);
+    setLocalQuantities(initialQuantities);
+  }, [initialQuantities]);
 
   const handleQuantityChange = (productId, quantity) => {
     setLocalQuantities({ ...localQuantities, [productId]: quantity });
