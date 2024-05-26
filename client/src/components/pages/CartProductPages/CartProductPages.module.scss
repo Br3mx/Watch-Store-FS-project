@@ -1,30 +1,35 @@
 .cartContainer {
-  padding: 10px;
+  padding: 20px;
 }
 
 .cardCart {
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .cardImg {
+    width: 100%;
+    height: auto;
+  }
+  .cardTitle {
+    font-size: 1.2rem;
+  }
+  .cardPrice,
+  .cardTotal {
+    font-size: 1rem;
+  }
 }
 
-.cardImg {
-  height: 200px;
-
-  object-fit: contain;
-}
-
-.cardTitle {
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-
-.cardText {
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.cardPrice {
-  font-size: 1rem;
-  color: #333;
+.summary {
+  margin-top: 20px;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  h5 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
 }

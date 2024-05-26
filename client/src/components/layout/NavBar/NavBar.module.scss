@@ -6,6 +6,7 @@
 
   .content {
     color: $color-light;
+    position: relative;
     &:hover {
       color: $color-main;
     }
@@ -13,6 +14,22 @@
   .cart {
     color: $color-main;
     font-size: 1.3rem;
+  }
+  .cartCount {
+    font-size: 13px;
+    position: absolute;
+    top: 55%;
+    left: 60%;
+    color: $color-dark;
+    background-color: rgba($color-light, 0.7);
+    border-radius: 50%;
+    padding: 5px; // Adjust padding to make it a circle
+    width: 15px; // Ensure the width is the same as height for a perfect circle
+    height: 15px; // Ensure the height is the same as width for a perfect circle
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
   .colapse {
     margin-left: 0;
