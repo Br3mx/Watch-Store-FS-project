@@ -1,5 +1,5 @@
 // CartProductPages.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Row, Col, Card, Form, Button, Image } from 'react-bootstrap';
 import { IMGS_URL } from '../../../config';
@@ -13,12 +13,16 @@ import ButtonGoToOrder from '../../features/ButtonGoToOrder/ButtonGoToOrder';
 const CartProductPages = () => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  const [quantities, setQuantities] = useState(
-    cart.reduce((acc, product) => {
-      acc[product.id] = product.quantity;
-      return acc;
-    }, {}),
-  );
+  const [quantities, setQuantities] = useState(() => {
+    const initialQuantities = {};
+    cart.forEach((product) => {
+      if (product.id) {
+        // Sprawdź, czy product.id jest zdefiniowane
+        initialQuantities[product.id] = product.quantity;
+      }
+    });
+    return initialQuantities;
+  });
   console.log('Quantities in CartProductPages:', quantities);
 
   const handleQuantityChange = (productId, quantity) => {
@@ -38,7 +42,11 @@ const CartProductPages = () => {
   const shippingCost = 10;
   const total = subtotal + shippingCost;
 
-  if (!cart.length) {
+  const validCart = cart.filter(
+    (product) => product.id && product.price && product.name,
+  );
+
+  if (validCart.length === 0) {
     return (
       <h1 style={{ textAlign: 'center', fontSize: '2rem' }}>
         No products in the cart.
@@ -51,10 +59,10 @@ const CartProductPages = () => {
       <Card className={style.cartCard}>
         <Row>
           <Col xs={12} md={8}>
-            {cart.map((product) => (
-              <Card key={product.id} className={`${style.productCard} mb-4`}>
-                <Row noGutters>
-                  <Col xs={4}>
+            {validCart.map((product) => (
+              <Card key={product.id} className={`${style.productCard} mb-4 `}>
+                <Row>
+                  <Col xs={4} className={style.contImg}>
                     <Image
                       src={`${IMGS_URL}/${product.folder}/${product.mainImg}`}
                       thumbnail
@@ -102,6 +110,7 @@ const CartProductPages = () => {
                       </Card.Text>
                       <Button
                         variant="danger"
+                        className={style.buttonDan}
                         onClick={() => handleRemove(product.id)}
                       >
                         Remove

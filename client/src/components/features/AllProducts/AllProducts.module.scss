@@ -8,15 +8,6 @@
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.logo {
-  height: 65% !important;
-  width: 12% !important;
-  margin: 40px 0 !important;
-}
-.logoCat {
-  position: relative;
-}
-
 .button {
   text-align: center;
 }
@@ -25,7 +16,7 @@
   margin: 15px auto;
   padding: 10px 16px;
   width: 200px;
-  border-left: 5px solid $color-success;
+  border-left: 5px solid $color-success !important;
   border-radius: 5px;
   box-shadow: 0px 0px 0.5px;
   .label {
@@ -41,7 +32,7 @@
     font-weight: 750;
     text-decoration: line-through red 2px;
     transform: rotate(15deg);
-    right: 35%;
+    right: 10%;
     top: 40%;
     display: inline-block;
     position: absolute;
@@ -54,8 +45,29 @@
     text-align: start;
   }
 }
+.colProd {
+  border-radius: 50%;
+}
 
+.carousel {
+  width: 100%;
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.carouselImage {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.rowCard {
+  text-align: center;
+  margin-top: 5% !important;
+}
 .contCard {
+  border-bottom-right-radius: 25% !important;
+  box-shadow: 0 2px 4px rgba($color-dark, 0.7);
+  border-bottom: none;
   .contImg {
     &:hover {
       transition: 0.5s;
@@ -84,4 +96,37 @@
       transition: filter 0.3s ease;
     }
   }
+}
+.pagination {
+  text-align: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagesTitle {
+  color: $color-dark;
+}
+.pagination > li > a {
+  background-color: $color-dark;
+  color: $color-light;
+  border: none;
+  gap: 10px;
+}
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+  color: $color-dark;
+  background-color: $color-main;
+  border-color: $color-main;
+}
+.pagination > li.active > a,
+.pagination > li.active > span,
+.pagination > li.active > a:hover,
+.pagination > li.active > a:focus,
+.pagination > li.active > span:hover,
+.pagination > li.active > span:focus {
+  color: $color-light !important;
+  background-color: $color-main !important;
+  border-color: $color-main !important;
 }

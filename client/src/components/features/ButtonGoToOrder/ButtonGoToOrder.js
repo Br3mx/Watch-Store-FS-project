@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Button1 from '../Button/Button';
 
 const ButtonGoToOrder = ({ quantities }) => {
   const getTotalQuantity = () => {
@@ -15,9 +16,7 @@ const ButtonGoToOrder = ({ quantities }) => {
       to={{ pathname: '/order', state: { quantities } }}
       style={{ textDecoration: 'none' }}
     >
-      <Button variant="primary" block>
-        Go to Order ({getTotalQuantity()})
-      </Button>
+      <button>Go to Order ({getTotalQuantity()})</button>
     </Link>
   );
 };

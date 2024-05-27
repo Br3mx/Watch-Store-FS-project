@@ -1,14 +1,15 @@
+import React from 'react';
 import NavBar from '../NavBar/NavBar';
 import Footer from '../Footer/Footer';
 import { Container } from 'react-bootstrap';
-import Categories from '../../features/Categories/Categories';
+import style from './MainLayout.module.scss';
 
 const MainLayout = ({ children }) => (
-  <>
-    <NavBar />
-    <Container>{children}</Container>
+  <div className={style.wrapper}>
+    <NavBar className={style.navbar} />
+    <Container className={style.content}>{children}</Container>
     <Footer />
-  </>
+  </div>
 );
 
 export default MainLayout;

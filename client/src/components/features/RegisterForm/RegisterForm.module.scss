@@ -1,1 +1,6 @@
 @import '../../../styles/settings.scss';
+.hide {
+  background-color: $color-main;
+  border-top-right-radius: 10% !important;
+  border-bottom-right-radius: 10% !important;
+}

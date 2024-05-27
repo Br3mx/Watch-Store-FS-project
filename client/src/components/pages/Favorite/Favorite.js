@@ -10,10 +10,14 @@ import ButtonCart from '../../features/ButtonCart/ButtonCart';
 const Favorite = () => {
   const favorites = useSelector((state) => state.favorites);
 
-  if (!favorites.length) {
+  const validFavorite = favorites.filter(
+    (product) => product.id && product.price && product.name,
+  );
+
+  if (validFavorite.length === 0) {
     return (
       <h1 style={{ textAlign: 'center', fontSize: '2rem' }}>
-        No favorite products.
+        No products in the favorite.
       </h1>
     );
   }
@@ -21,7 +25,7 @@ const Favorite = () => {
   return (
     <div className={style.favoriteContainer}>
       <Row className="justify-content-center">
-        {favorites.map((product) => (
+        {validFavorite.map((product) => (
           <Col key={product.id} xs={12} sm={6} md={4} lg={3}>
             <Card className={`${style.favoriteCard} mb-4`}>
               <Link

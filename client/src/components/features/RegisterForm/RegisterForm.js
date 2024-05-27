@@ -161,7 +161,11 @@ const RegisterForm = () => {
             placeholder="Enter password"
             isInvalid={errors.password}
           />
-          <Button variant="outline-secondary" onClick={toggleShowPassword}>
+          <Button
+            className={style.hide}
+            variant="outline-secondary"
+            onClick={toggleShowPassword}
+          >
             {showPassword ? 'Hide' : 'Show'}{' '}
             {/* Zmiana etykiety przycisku w zależności od stanu showPassword */}
           </Button>
@@ -214,9 +218,7 @@ const RegisterForm = () => {
         </div>
       </Form.Group>
 
-      <Button1 className={style.Button} type="submit">
-        Submit
-      </Button1>
+      <Button1 type="submit">Submit</Button1>
     </Form>
   );
 };

@@ -1,29 +1,38 @@
 .cartContainer {
   padding: 20px;
 }
-
+.contImg {
+  display: grid;
+  place-items: center;
+}
+.cartImg {
+  justify-content: center;
+  width: 50% !important;
+  height: auto !important;
+  border: none !important;
+}
+.buttonDan {
+  font-size: 12px;
+}
 .cardCart {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  .cardImg {
-    width: 100%;
-    height: auto;
-  }
-  .cardTitle {
-    font-size: 1.2rem;
-  }
-  .cardPrice,
-  .cardTotal {
-    font-size: 1rem;
-  }
 }
-
+.cardTitle {
+  font-size: 1rem;
+}
+.cardPrice,
+.cardTotal {
+  font-size: 0.7rem;
+}
+.productCard {
+  border: none;
+}
 .summary {
   margin-top: 20px;
   padding: 10px;
-  border-top: 1px solid #ddd;
   h5 {
     font-size: 1.5rem;
     margin-bottom: 10px;

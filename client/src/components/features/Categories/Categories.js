@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import style from './Categories.module.scss';
 
 const Categories = ({ onCategoryChange }) => {
@@ -7,23 +6,27 @@ const Categories = ({ onCategoryChange }) => {
 
   const handleClick = (category) => {
     setActiveCategory(category);
-    onCategoryChange(category); // Pass the selected category to the parent component
+    onCategoryChange(category); // Przekazanie wybranej kategorii do komponentu nadrzędnego
   };
 
   return (
-    <div className={style.catCont}>
-      <h3 className={style.title}>Categories</h3>
-      <ul className={style.liCont}>
-        {['All', 'Men', 'Women'].map((category) => (
-          <li
-            key={category}
-            className={activeCategory === category ? style.active : ''}
-            onClick={() => handleClick(category)}
-          >
-            {category}
-          </li>
-        ))}
-      </ul>
+    <div className={style.catNav}>
+      <div className={style.p}>
+        <h3 className={style.title}>Categories:</h3>
+        <ul className={style.catList}>
+          {['All', 'Men', 'Women', 'Smartwatch'].map((category) => (
+            <li
+              key={category}
+              className={`${style.catItem} ${
+                activeCategory === category ? style.active : ''
+              }`}
+              onClick={() => handleClick(category)}
+            >
+              {category}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

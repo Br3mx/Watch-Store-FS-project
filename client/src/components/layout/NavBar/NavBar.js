@@ -6,13 +6,37 @@ import style from './NavBar.module.scss';
 import logo from './icon/logo764.png';
 import { FaClock, FaHeart, FaShoppingCart } from 'react-icons/fa';
 import Logo from '../../features/Logo/Logo';
+import { useEffect, useState } from 'react';
 const NavBar = () => {
   const user = useSelector(getUser);
   const cart = useSelector((state) => state.cart);
-  const cartCount = cart.length;
+
+  const validCart = cart.filter(
+    (product) => product.id && product.price && product.name,
+  );
+  const cartCount = validCart.length;
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <Navbar data-bs-theme="primary" className={`${style.navbar}  px-5`}>
+    <Navbar
+      data-bs-theme="primary"
+      className={`${style.navbar} ${scrolled ? style.scrolled : ''} px-5`}
+    >
       <Navbar.Brand
         as={Link}
         to="/"

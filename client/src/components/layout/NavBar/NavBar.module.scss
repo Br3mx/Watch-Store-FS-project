@@ -3,6 +3,20 @@
 .navbar {
   background-color: $color-dark;
   font-size: 1rem;
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: $color-dark; // Tło z przezroczystością
+  backdrop-filter: blur(0px); // Brak efektu blur na początku
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  &.scrolled {
+    background: rgba($color-dark, 0.7); // Zwiększona przezroczystość tła
+    backdrop-filter: blur(10px); // Efekt blur po przewinięciu
+    .content {
+      color: $color-main;
+    }
+  }
 
   .content {
     color: $color-light;

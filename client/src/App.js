@@ -15,6 +15,7 @@ import OrderFromPages from './components/pages/OrderFormPages/OrderFormPages';
 import OrderConfirmation from './components/pages/OrderConfirmation/OrderConfirmation';
 import Favorite from './components/pages/Favorite/Favorite';
 import OrderFromPagesCart from './components/pages/OrderFromPagesCart/OrderFromPagesCart';
+import ScrollToTop from './utils/ScrollToTop';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -26,19 +27,21 @@ const App = () => {
 
   return (
     <MainLayout>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/logout" element={<Logout />} />
-        <Route path="/products/:id" element={<SingleProduct />} />
-        <Route path="/cart-products" element={<CartProductPages />} />
-        <Route path="/order/:productId" element={<OrderFromPages />} />
-        <Route path="/order" element={<OrderFromPagesCart />} />
-        <Route path="/order-confirmation" element={<OrderConfirmation />} />
-        <Route path="/favorite" element={<Favorite />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <ScrollToTop>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
+          <Route path="/products/:id" element={<SingleProduct />} />
+          <Route path="/cart-products" element={<CartProductPages />} />
+          <Route path="/order/:productId" element={<OrderFromPages />} />
+          <Route path="/order" element={<OrderFromPagesCart />} />
+          <Route path="/order-confirmation" element={<OrderConfirmation />} />
+          <Route path="/favorite" element={<Favorite />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </ScrollToTop>
     </MainLayout>
   );
 };

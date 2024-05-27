@@ -1,51 +1,45 @@
 @import '../../../styles/settings.scss';
 
-.catCont {
-  width: 100%; // Ustawienie szerokości kontenera na 100%
-  padding: 0; // Usuń ewentualne paddingi
-  margin-left: 50%;
-  padding-bottom: 4rem;
-  margin: 0; // Usuń ewentualne marginesy
-  position: absolute;
-  bottom: 15%;
-  left: 47%;
+.catNav {
+  background-color: $color-dark;
+  color: $color-main;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba($color-main, 0.3);
+  // Padding to provide some space around the content
 }
-button {
-  border: none;
-  background-color: transparent;
-  cursor: none;
+.p {
+  display: flex; // Use flexbox to align items in one row
+  align-items: center; // Center items vertically
+  justify-content: center;
+  padding: 10px 20px;
+  margin-left: 260px;
 }
 .title {
-  margin-left: 18.5%;
-  margin-bottom: 2%;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: $color-main;
+  margin: 0;
 }
-.liCont {
-  list-style: none;
+.catList {
   display: flex;
-  width: 100%; // Ustawienie szerokości na 100%
-  padding: 0; // Usuń paddingi
-  margin: 0; // Usuń marginesy
+  justify-content: center;
+  margin: 0;
+  padding-left: 125px;
+  gap: 48px;
+  list-style: none;
 }
 
-.liCont li {
-  display: inline-block; // Ustaw elementy w jednej linii
-  margin: 0 1.3rem;
-  padding: 0rem 4rem;
-  font-size: 1.5rem;
-  border: 2px solid $color-dark;
-  border-radius: 0.5rem;
-  background-color: $color-light; // Tło przycisku
-  text-align: center; // Wyśrodkowanie tekstu wewnątrz <li>
-  cursor: pointer; // Kursor jak na przyciskach
-  transition: background-color 0.3s ease;
+.catItem {
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 
   &:hover {
-    background-color: $color-dark;
+    background-color: rgba($color-main, 0.3);
+  }
+}
 
-    color: $color-main;
-  }
-  &.active {
-    background-color: $color-main;
-    color: $color-dark;
-  }
+.active {
+  background-color: $color-main;
+  color: $color-light;
 }

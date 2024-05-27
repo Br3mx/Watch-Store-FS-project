@@ -4,14 +4,17 @@ import axios from 'axios';
 import { IMGS_URL, API_URL } from '../../../config';
 import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
 import { getProductById } from '../../../redux/productsRedux';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Button1 from '../Button/Button';
+import style from './OrderProductFrom.module.scss';
+import { removeFromCart } from '../../../redux/cartRedux';
+import { FaTimes } from 'react-icons/fa';
 
 const OrderProductForm = () => {
   const { productId } = useParams();
   const { clientId } = useParams();
   const product = useSelector((state) => getProductById(state, productId));
-
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -35,14 +38,21 @@ const OrderProductForm = () => {
       setPrice(newPrice);
     }
   };
-
+  const handleRemove = () => {
+    dispatch(removeFromCart(productId)); // Wywołujemy akcję usuwania produktu z koszyka
+    navigate('/'); // Przekierowanie do koszyka po usunięciu produktu
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const orderData = {
         productId: productId,
+        quantity: formData.quantity,
         clientId: clientId,
-        ...formData,
+        name: formData.name,
+        email: formData.email,
+        address: formData.address,
+        phone: formData.phone,
       };
 
       const response = await axios.post(`${API_URL}/orders`, orderData);
@@ -50,9 +60,14 @@ const OrderProductForm = () => {
       navigate('/order-confirmation');
     } catch (error) {
       console.error('Error submitting order:', error);
-      console.error('Response from server:', error.response); // Dodaj tę linię
+      console.error('Response from server:', error.response);
     }
   };
+
+  // Subtotal calculation for single product
+  const subtotal = product.price * formData.quantity;
+  const shippingCost = 10;
+  const total = subtotal + shippingCost;
 
   return (
     <Container className="mt-5">
@@ -65,17 +80,22 @@ const OrderProductForm = () => {
               </Card.Title>
               <Card className="mb-4">
                 <Row className="g-0">
-                  <Col md={1}>
+                  <Col md={2}>
                     <Card.Img
                       src={`${IMGS_URL}/${product.folder}/${product.mainImg}`}
                     />
                   </Col>
                   <Col md={8}>
                     <Card.Body>
+                      <FaTimes
+                        className={style.removeButton}
+                        onClick={handleRemove}
+                      />
                       <Card.Title>{product.name}</Card.Title>
                       <Card.Text>
                         <strong>Price: </strong>${price}
                       </Card.Text>
+                      <Card.Text>{product.model}</Card.Text>
                     </Card.Body>
                   </Col>
                 </Row>
@@ -135,7 +155,18 @@ const OrderProductForm = () => {
                     required
                   />
                 </Form.Group>
-
+                <div className={style.summary}>
+                  <h5>Order Summary</h5>
+                  <p>
+                    <strong>Subtotal:</strong> ${subtotal.toFixed(2)}
+                  </p>
+                  <p>
+                    <strong>Shipping:</strong> ${shippingCost.toFixed(2)}
+                  </p>
+                  <p>
+                    <strong>Total:</strong> ${total.toFixed(2)}
+                  </p>
+                </div>
                 <Button1>Submit Order</Button1>
               </Form>
             </Card.Body>

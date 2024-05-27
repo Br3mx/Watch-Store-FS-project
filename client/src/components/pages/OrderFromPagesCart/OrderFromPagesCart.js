@@ -2,35 +2,29 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Row, Col, Card, Form, Button, Container } from 'react-bootstrap';
 import { IMGS_URL, API_URL } from '../../../config';
-import { updateProductQuantity } from '../../../redux/cartRedux'; // Assuming you have an action to update product quantity
+import {
+  removeFromCart,
+  updateProductQuantity,
+} from '../../../redux/cartRedux'; // Assuming you have an action to update product quantity
 import style from './OrderFromPagesCart.module.scss';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Button1 from '../../features/Button/Button';
+import { FaTimes } from 'react-icons/fa';
 
 const OrderFromPagesCart = () => {
-  const location = useLocation();
-  const initialQuantities = location.state?.quantities || {};
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const validCart = cart.filter(
+    (product) => product.id && product.price !== undefined && product.name,
+  );
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     address: '',
     phone: '',
   });
-
-  const [localQuantities, setLocalQuantities] = useState(initialQuantities);
-
-  useEffect(() => {
-    setLocalQuantities(initialQuantities);
-  }, [initialQuantities]);
-
-  const handleQuantityChange = (productId, quantity) => {
-    setLocalQuantities({ ...localQuantities, [productId]: quantity });
-    dispatch(updateProductQuantity(productId, quantity));
-  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,13 +34,17 @@ const OrderFromPagesCart = () => {
     });
   };
 
+  const handleQuantityChange = (productId, quantity) => {
+    dispatch(updateProductQuantity(productId, quantity));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const orderData = {
         products: cart.map((product) => ({
           productId: product.id,
-          quantity: localQuantities[product.id],
+          quantity: product.quantity,
           price: product.price,
         })),
         ...formData,
@@ -60,9 +58,11 @@ const OrderFromPagesCart = () => {
       console.error('Response from server:', error.response);
     }
   };
-
-  const subtotal = cart.reduce(
-    (acc, product) => acc + product.price * localQuantities[product.id],
+  const handleRemove = (productId) => {
+    dispatch(removeFromCart(productId));
+  };
+  const subtotal = validCart.reduce(
+    (acc, product) => acc + product.price * product.quantity,
     0,
   );
   const shippingCost = 10;
@@ -86,13 +86,20 @@ const OrderFromPagesCart = () => {
                 Order Products
               </Card.Title>
               <div>
-                {cart.map((product) => (
+                {validCart.map((product) => (
                   <Card
                     key={product.id}
                     className={`${style.productCard} mb-4`}
+                    style={{ position: 'relative' }}
                   >
-                    <Row noGutters>
-                      <Col md={4}>
+                    <button
+                      className={style.removeButton}
+                      onClick={() => handleRemove(product.id)}
+                    >
+                      <FaTimes />
+                    </button>
+                    <Row>
+                      <Col md={4} className={style.contImg}>
                         <Card.Img
                           src={`${IMGS_URL}/${product.folder}/${product.mainImg}`}
                           className={style.cartImg}
@@ -100,16 +107,23 @@ const OrderFromPagesCart = () => {
                       </Col>
                       <Col md={8}>
                         <Card.Body>
-                          <Card.Title>{product.name}</Card.Title>
-                          <Card.Text>
+                          <Card.Title style={{ fontSize: '13px' }}>
+                            {product.name}
+                          </Card.Title>
+                          <Card.Text style={{ fontSize: '10px' }}>
                             <strong>Price: </strong>${product.price.toFixed(2)}
                           </Card.Text>
-                          <Form.Group controlId={`quantity-${product.id}`}>
-                            <Form.Label>Quantity</Form.Label>
+                          <Form.Group
+                            style={{ marginTop: '-15px' }}
+                            controlId={`quantity-${product.id}`}
+                          >
+                            <Form.Label style={{ fontSize: '12px' }}>
+                              Quantity
+                            </Form.Label>
                             <Form.Control
                               type="number"
                               name="quantity"
-                              value={localQuantities[product.id]}
+                              value={product.quantity}
                               onChange={(e) =>
                                 handleQuantityChange(
                                   product.id,
@@ -121,9 +135,7 @@ const OrderFromPagesCart = () => {
                           </Form.Group>
                           <Card.Text className={style.cardTotal}>
                             <strong>Total:</strong> $
-                            {(
-                              product.price * localQuantities[product.id]
-                            ).toFixed(2)}
+                            {(product.price * product.quantity).toFixed(2)}
                           </Card.Text>
                         </Card.Body>
                       </Col>
@@ -173,20 +185,20 @@ const OrderFromPagesCart = () => {
                   />
                 </Form.Group>
                 <div className={style.summary}>
-                  <h5>Order Summary</h5>
+                  <h5 style={{ textAlign: 'center' }}>Order Summary</h5>
                   <p>
                     <strong>Subtotal:</strong> ${subtotal.toFixed(2)}
                   </p>
                   <p>
-                    <strong>Shipping:</strong> ${shippingCost.toFixed(2)}
+                    <strong>Tax:</strong> ${shippingCost.toFixed(2)}
                   </p>
                   <p>
                     <strong>Total:</strong> ${total.toFixed(2)}
                   </p>
                 </div>
-                <Button variant="primary" type="submit" block>
-                  Submit Order
-                </Button>
+                <div style={{ display: 'grid', placeItems: 'center' }}>
+                  <Button1 type="submit">Submit Order</Button1>
+                </div>
               </Form>
             </Card.Body>
           </Card>

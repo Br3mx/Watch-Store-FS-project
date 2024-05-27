@@ -3,12 +3,13 @@
 button {
   font-size: 1.3rem;
   padding: 10px 2rem;
-  border-radius: 10px;
+  border: none;
+  border-radius: 10px !important;
   background-color: $color-success;
   transition: filter 0.5s, border-radius 0.5s;
   &:hover {
     transition: 0.5s;
     filter: brightness(0.8);
-    border-radius: 0px;
+    border-radius: 0px !important;
   }
 }

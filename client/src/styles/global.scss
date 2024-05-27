@@ -1,5 +1,5 @@
 @import './settings.scss';
-
+@import '../config.scss';
 *,
 *::before,
 *::after {
@@ -9,11 +9,23 @@
 body {
   margin: 0;
   padding: 0;
-  background: $color-main;
+  height: 100%;
   font-family: $font-text;
   font-size: ($base-size * 1.1);
   color: $color-dark;
   letter-spacing: 0.5px;
+  /* Dodanie efektu przezroczystości i rozmycia do tła */
+  background: linear-gradient(
+      to bottom,
+      rgba($color-dark, 1),
+      rgba($color-main, 0.6)
+    ),
+    url('#{$IMGS_URL}/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* Dodanie efektu rozmycia do tła */
+  /* Możesz dostosować wartość */
 }
 
 :global(.container) {
