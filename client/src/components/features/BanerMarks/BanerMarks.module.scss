@@ -8,10 +8,12 @@
     transform: translateX(-100%);
   }
 }
+
 .title {
   text-align: center;
   color: grey;
 }
+
 .slider {
   height: 100%;
   margin: auto;
@@ -45,11 +47,19 @@
 .slideTrack {
   animation: scroll 40s linear infinite;
   display: flex;
-  width: 200%; // Ustawienie szerokości na 800% szerokości pojedynczego slajdu
+  width: 200%; // Ustawienie szerokości na 200%, aby zmieścić więcej slajdów
+  // Responsywność: Redefiniowanie szerokości dla różnych ekranów
+  @media (max-width: 768px) {
+    width: 400%; // Dla mniejszych ekranów zmniejszamy szerokość, aby zmniejszyć liczbę slajdów na ekranie
+  }
 }
 
 .slide {
   flex: 0 0 auto;
   height: 100px;
   width: 12.5%; // Ustawienie szerokości slajdu na 1/8 szerokości kontenera
+  // Responsywność: Redefiniowanie szerokości dla różnych ekranów
+  @media (max-width: 768px) {
+    width: 25%; // Dla mniejszych ekranów zmniejszamy szerokość, aby zmniejszyć liczbę slajdów na ekranie
+  }
 }

@@ -1,8 +1,7 @@
-// cartRedux.js
-import initialState from './initialState.js';
+import { initialState as globalInitialState } from './initialState';
 
 // Actions
-const createActionName = (name) => `app/products/${name}`;
+const createActionName = (name) => `app/cart/${name}`;
 
 const ADD_TO_CART = createActionName('ADD_TO_CART');
 const REMOVE_FROM_CART = createActionName('REMOVE_FROM_CART');
@@ -16,9 +15,28 @@ export const updateProductQuantity = (productId, quantity) => ({
   payload: { productId, quantity },
 });
 
+const CART_STORAGE_KEY = 'cart';
+
+// Funkcja do zapisu stanu koszyka do localStorage
+const saveCartToLocalStorage = (cart) => {
+  if (localStorage.getItem('cookieConsent') === 'true') {
+    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+  }
+};
+
+const loadCartFromLocalStorage = () => {
+  if (localStorage.getItem('cookieConsent') === 'true') {
+    const cartJSON = localStorage.getItem(CART_STORAGE_KEY);
+    return cartJSON ? JSON.parse(cartJSON) : [];
+  }
+  return [];
+};
+
+// Stan początkowy koszyka (załadowany z localStorage lub globalInitialState)
+const initialState = loadCartFromLocalStorage();
+
 // Reducer
-export default function reducer(state = [initialState], action) {
-  // Changed here
+export default function reducer(state = initialState, action) {
   switch (action.type) {
     case ADD_TO_CART:
       const existingProduct = state.find(
@@ -45,3 +63,10 @@ export default function reducer(state = [initialState], action) {
       return state;
   }
 }
+
+export const cartMiddleware = (store) => (next) => (action) => {
+  const result = next(action);
+  const state = store.getState();
+  saveCartToLocalStorage(state.cart);
+  return result;
+};

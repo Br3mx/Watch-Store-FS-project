@@ -11,22 +11,21 @@ const Categories = ({ onCategoryChange }) => {
 
   return (
     <div className={style.catNav}>
-      <div className={style.p}>
+      <ul className={style.catList}>
         <h3 className={style.title}>Categories:</h3>
-        <ul className={style.catList}>
-          {['All', 'Men', 'Women', 'Smartwatch'].map((category) => (
-            <li
-              key={category}
-              className={`${style.catItem} ${
-                activeCategory === category ? style.active : ''
-              }`}
-              onClick={() => handleClick(category)}
-            >
-              {category}
-            </li>
-          ))}
-        </ul>
-      </div>
+
+        {['All', 'Men', 'Women', 'Smartwatch'].map((category) => (
+          <li
+            key={category}
+            className={`${style.catItem} ${
+              activeCategory === category ? style.active : ''
+            }`}
+            onClick={() => handleClick(category)}
+          >
+            {category}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

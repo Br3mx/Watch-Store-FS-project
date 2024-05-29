@@ -7,12 +7,14 @@ import {
   updateProductQuantity,
 } from '../../../redux/cartRedux'; // Assuming you have an action to update product quantity
 import style from './OrderFromPagesCart.module.scss';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Button1 from '../../features/Button/Button';
 import { FaTimes } from 'react-icons/fa';
 
 const OrderFromPagesCart = () => {
+  const { productId } = useParams(); // Pobieramy productId z parametrów ścieżki
+
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -24,6 +26,7 @@ const OrderFromPagesCart = () => {
     email: '',
     address: '',
     phone: '',
+    quantity: 1,
   });
 
   const handleChange = (e) => {
@@ -41,13 +44,24 @@ const OrderFromPagesCart = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      // Parsowanie quantity na liczbę
+      const parsedQuantity = parseInt(formData.quantity, 10);
+
+      // Sprawdzenie, czy parsedQuantity jest liczbą
+      if (isNaN(parsedQuantity)) {
+        console.error('Quantity is not a number');
+        return; // Przerwanie działania funkcji w przypadku błędnych danych
+      }
+
       const orderData = {
-        products: cart.map((product) => ({
+        products: validCart.map((product) => ({
           productId: product.id,
           quantity: product.quantity,
-          price: product.price,
         })),
-        ...formData,
+        name: formData.name,
+        email: formData.email,
+        address: formData.address,
+        phone: formData.phone,
       };
 
       const response = await axios.post(`${API_URL}/orders`, orderData);

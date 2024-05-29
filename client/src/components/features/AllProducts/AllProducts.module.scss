@@ -82,10 +82,14 @@
     }
     .overlay {
       position: absolute;
-      top: 23%;
-      left: 13%;
+      top: 23% !important;
+      left: 15% !important;
       display: none;
       z-index: 1;
+      .icons {
+        gap: 20px !important;
+        display: flex;
+      }
     }
     .cardImage {
       position: relative;
@@ -112,6 +116,7 @@
   border: none;
   gap: 10px;
 }
+
 .pagination > li > a:focus,
 .pagination > li > a:hover,
 .pagination > li > span:focus,
@@ -120,6 +125,7 @@
   background-color: $color-main;
   border-color: $color-main;
 }
+
 .pagination > li.active > a,
 .pagination > li.active > span,
 .pagination > li.active > a:hover,
@@ -129,4 +135,19 @@
   color: $color-light !important;
   background-color: $color-main !important;
   border-color: $color-main !important;
+}
+
+@media (max-width: 768px) {
+  .contCard {
+    display: grid;
+    place-items: center;
+    margin-left: 17%;
+    width: 70%;
+  }
+  .prodTitle {
+    font-size: 20px;
+  }
+  .icons {
+    display: none;
+  }
 }

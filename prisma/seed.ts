@@ -64,7 +64,7 @@ function getWatches() {
         'Zegarek męski Tissot T006.407.16.033.00 z serii Le Locle to model ceniony na całym świecie. Wyposażono go w mechanizm automatyczny Powermatic 80 Swiss Made oraz twarde szafirowe szkiełko. Wodoszczelność produktu wynosi 30 metrów. Koperta zegarka T0064071603300 została wykonana z wysokiej jakości stali szlachetnej 316L. Gwarancja producenta liczy 2 lata i jest ważna od daty zakupu',
     },
     {
-      id: 'fd105551-0f0d-4ag6-bc41-c559c8a17256',
+      id: 'fd105541-0f0d-4a96-bc41-c559c8a17256',
       price: 3600,
       oldPrice: undefined,
       mainImg: 'certina-main.jpg',
@@ -79,7 +79,7 @@ function getWatches() {
         'Tradycyjne szwajcarskie zegarmistrzostwo, klasyczna kolorystyka, materiały premium i nowoczesne rozwiązania – taki właśnie jest damski zegarek DS-8 Lady COSC C033.051.22.118.01 od marki Certina. Produkt, dzięki srebrno-złotej stylistyce, wkomponuje się w wiele formalnych i codziennych stylizacji. Subtelny kobiecy projekt podkreśla tarcza z masy perłowej. Model jest wysokiej klasy chronometrem wyposażonym w mechanizm kwarcowy z technologią Precidrive™ i funkcją datownika. Jego precyzję potwierdza certyfikat COSC. Zegarek Certina C0330512211801 został wyposażony w system zabezpieczeń Double Security. Jest wodoszczelny w klasie 10 ATM.',
     },
     {
-      id: 'fd105541-0f0d-4ag6-bc41-c559c8a17256',
+      id: 'fd105531-0f0d-4a96-bc41-c559c8a17256',
       price: 319,
       oldPrice: 485,
       mainImg: 'timex-main.jpg',
@@ -95,7 +95,7 @@ function getWatches() {
     },
 
     {
-      id: 'fd105531-0f0d-4ag6-bc41-c559c8a17256',
+      id: 'fd105521-0f0d-4a96-bc41-c559c8a17256',
       price: 239,
       oldPrice: undefined,
       mainImg: 'bowa-main.jpg',
@@ -110,7 +110,7 @@ function getWatches() {
         'Bowa-PH385-95-185M Praha to model charakteryzujący się wyjątkowym odcieniem tarczy w odcieniu Tiffany Blue, kojarzonym z luksusem i elegancją. By podkreślić tę wyjątkową barwę, tarcze ozdobiono dodatkowo szlifem słonecznym. Wysublimowane analogowe wskazówki i indeksy liniowe w odcieniu srebrnym, tworzą unikalne zestawienie z jego tłem. Bransoleta typu mesh w kolorze srebra podkreśla piękno każdego detalu i nadaje modelowi nieco biżuteryjnego charakteru. Produkt jest objęty dwuletnią gwarancją.',
     },
     {
-      id: 'fd105521-0f0d-4ag6-bc41-c559c8a17256',
+      id: 'fd105511-0f0d-4a96-bc41-c559c8a17256',
       price: 1140,
       oldPrice: undefined,
       mainImg: 'adriaticamoon-main.jpg',
@@ -125,7 +125,7 @@ function getWatches() {
         'Adriatica Moonphase A3802.2193QF to zdecydowanie wyjątkowy, damski model, który zwraca uwagę. Srebrna tarcza zdobiona kilkoma kryształkami została wyposażona w subtarczę datownika dnia miesiąca i dnia tygodnia, a także we wskaźnik faz księżyca. Cyferblat posiada także zabezpieczenie, które wykonano z utwardzanego szkła mineralnego. Szwajcarski mechanizm kwarcowy, dokładnie i precyzyjnie odmierza czas. Wodoszczelność wynosi 5 ATM.',
     },
     {
-      id: 'fd105511-0f0d-4ag6-bc41-c559c8a17256',
+      id: 'fd105501-0f0d-4a96-bc41-c559c8a17256',
       price: 2940,
       oldPrice: undefined,
       mainImg: 'herbelin-main.jpg',
@@ -141,7 +141,7 @@ function getWatches() {
     },
 
     {
-      id: 'fd105501-0f0d-4ag6-bc41-c559c8a17256',
+      id: 'fd105551-1f0d-4a96-bc41-c559c8a17256',
       price: 1839,
       oldPrice: undefined,
       mainImg: 'suunto-main.jpg',
@@ -156,7 +156,7 @@ function getWatches() {
         'Suunto Race All Black SS050929000 to zegarek sportowy z dużym wyświetlaczem, idealny na trening i zawody. Zarówno koperta z poliamidu wzmocnionego włóknem szklanym, jak i silikonowy pasek utrzymane są w klasycznej czerni. Dotykowy ekran AMOLED przed uszkodzeniami zabezpiecza szkło szafirowe. Cyfrowa koronka znacząco ułatwia nawigację po menu. Model wyposażono w wiele praktycznych funkcji dotyczących treningów (ponad 95 trybów sportowych), zdrowia i życia codziennego. Znajdziemy tu m.in. barometr, wysokość na podstawie GPS, funkcje pogodowe, kompas, nawigację z punktami orientacyjnymi i wizualizacją trasy czy też wskaźniki spalania kalorii i tętna podczas codziennych aktywności. Licząca 100 metrów wodoszczelność umożliwia nurkowanie z urządzeniem na nadgarstku. Produkt został objęty dwuletnią gwarancją producenta.',
     },
     {
-      id: 'fd105551-1f0d-4ag6-bc41-c559c8a17256',
+      id: 'fd105551-2f0d-4a96-bc41-c559c8a17256',
       price: 383,
       oldPrice: undefined,
       mainImg: 'alexa-main.jpg',
@@ -171,7 +171,7 @@ function getWatches() {
         'Manta Alexa Lux Gold SET SWU501LGD to casualowy smartwatch damski dla osób, które szukają funkcjonalnego dodatku o gustownym wyglądzie. Zarówno okrągła koperta, jak i bransoleta mesh utrzymane są w pięknym złotym kolorze. Nowoczesny wyświetlacz okala okrągła obudowa, która stanowi świetne dopełnienie każdego elementu. Dzięki ultracienkiej obudowie urządzenie z łatwością zmieści się pod mankietem koszuli. Uniwersalność zegarka zawdzięczamy obecności różnorodnych funkcji połączonych z eleganckim designem. Jeśli chcesz, by towarzyszyły Ci 22 tryby sportowe, alarm, akcelerometr, krokomierz, licznik kalorii, minutnik, monitor snu, pulsometr, żyroskop, przypomnienie o ruchu czy możliwość sterowania muzyką z telefonu, to nie czekaj i wybierz odpowiedni dla siebie Smartwatch Manta!',
     },
     {
-      id: 'fd105551-2f0d-4ag6-bc41-c559c8a17256',
+      id: 'fd105551-3f0d-4a96-bc41-c559c8a17256',
       price: 254,
       oldPrice: 299,
       mainImg: 'garett-main.jpg',
@@ -187,7 +187,7 @@ function getWatches() {
     },
 
     {
-      id: 'fd105551-3f0d-4ag6-bc41-c559c8a17256',
+      id: 'fd105551-3f0d-4a96-bc41-c559c8a16256',
       price: 1170,
       oldPrice: 1499,
       mainImg: 'polar-main.jpg',
@@ -506,9 +506,9 @@ function getWatches() {
   ];
 }
 
-function getClients() {
-  return [
-    {
+//function getClients() {
+// return [
+/*   {
       id: 'fd105551-0f0d-4a9f-bc41-c559c8a17201',
       name: 'John Doe',
       address: '123 Main Street, London',
@@ -524,32 +524,32 @@ function getClients() {
       address: '321 Main Street, London',
     },
   ];
-}
+//}
 
-function getOrders() {
+/*function getOrders() {
   return [
     {
       id: 'fd105551-0f0d-4a9f-bc41-c559c8a17260',
       productId: 'fd105551-0f0d-4a9f-bc41-c559c8a17256',
-      clientId: 'fd105551-0f0d-4a9f-bc41-c559c8a17203',
+      //clientId: 'fd105551-0f0d-4a9f-bc41-c559c8a17203',
     },
     {
       id: 'fd105551-0f0d-4a9f-bc41-c559c8a17261',
       productId: 'fd105551-0f0d-4a9f-bc41-c89378a17297',
-      clientId: 'fd105551-0f0d-4a9f-bc41-c559c8a17202',
+      //clientId: 'fd105551-0f0d-4a9f-bc41-c559c8a17202',
     },
     {
       id: 'fd105551-0f0d-4a9f-bc41-c559c8a17262',
       productId: 'fd105551-0f0d-4a9f-bc41-c89378a17297',
-      clientId: 'fd105551-0f0d-4a9f-bc41-c559c8a17201',
+      //clientId: 'fd105551-0f0d-4a9f-bc41-c559c8a17201',
     },
   ];
 }
-
+*/
 async function seed() {
   await db.watch.deleteMany();
-  await db.client.deleteMany();
-  await db.order.deleteMany();
+  // await db.client.deleteMany();
+  //await db.order.deleteMany();
 
   await Promise.all(
     getWatches().map((watch) => {
@@ -557,27 +557,25 @@ async function seed() {
     }),
   );
 
-  await Promise.all(
+  /* await Promise.all(
     getClients().map((client) => {
       return db.client.create({ data: client });
     }),
   );
 
   await Promise.all(
-    getOrders().map(({ productId, clientId, ...orderData }) => {
+    getOrders().map(({ productId, ...orderData }) => {
       return db.order.create({
         data: {
           ...orderData,
           product: {
             connect: { id: productId },
           },
-          client: {
-            connect: { id: clientId },
-          },
         },
       });
     }),
   );
+  */
 }
 
 seed();

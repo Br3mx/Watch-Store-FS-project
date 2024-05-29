@@ -1,6 +1,7 @@
 import React from 'react';
 import { IMGS_URL } from '../../../config';
 import style from './BanerMarks.module.scss';
+
 const BanerMarks = () => {
   const brandImages = [
     'baner1.png',
@@ -18,7 +19,7 @@ const BanerMarks = () => {
       <div className={style.slider}>
         <div className={style.slideTrack}>
           {brandImages.map((image) => (
-            <div className={style.slide}>
+            <div className={style.slide} key={image}>
               <img
                 src={`${IMGS_URL}/BANER/${image}`}
                 height="100"
@@ -27,7 +28,7 @@ const BanerMarks = () => {
             </div>
           ))}
           {brandImages.map((image) => (
-            <div className={style.slide}>
+            <div className={style.slide} key={`${image}-second`}>
               <img src={`${IMGS_URL}/BANER/${image}`} height="90" width="180" />
             </div>
           ))}

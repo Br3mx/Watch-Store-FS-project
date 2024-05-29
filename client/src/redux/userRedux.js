@@ -1,4 +1,4 @@
-import axios from 'axios';
+/*import axios from 'axios';
 import { API_URL } from '../config';
 import initialState from './initialState';
 
@@ -59,3 +59,4 @@ export default function reducer(statePart = [initialState], action) {
       return statePart;
   }
 }
+*/

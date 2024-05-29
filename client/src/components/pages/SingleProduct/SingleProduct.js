@@ -31,7 +31,11 @@ const SingleProduct = () => {
                   className={style.mainImg}
                 />
               </Col>
-              <Col md={6} style={{ paddingRight: '5rem', textAlign: 'center' }}>
+              <Col
+                md={6}
+                style={{ paddingRight: '5rem', textAlign: 'center' }}
+                className={style.item}
+              >
                 <Card.Title>
                   <h1 className={style.title}>{product.name}</h1>
                 </Card.Title>

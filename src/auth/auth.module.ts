@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+/*import { Module } from '@nestjs/common';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { UserModule } from 'src/user/user.module';
@@ -28,3 +28,4 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
   ],
 })
 export class AuthModule {}
+*/

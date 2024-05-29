@@ -48,7 +48,17 @@ const CartProductPages = () => {
 
   if (validCart.length === 0) {
     return (
-      <h1 style={{ textAlign: 'center', fontSize: '2rem' }}>
+      <h1
+        style={{
+          textAlign: 'center',
+          fontSize: '2rem',
+          backgroundColor: 'rgba(255, 255, 255, 0.5)',
+          borderRadius: '10px',
+          width: '50%',
+          margin: '15% auto',
+          padding: '50px',
+        }}
+      >
         No products in the cart.
       </h1>
     );

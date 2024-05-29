@@ -38,3 +38,14 @@
 .buy {
   margin-bottom: 1rem;
 }
+
+@media (max-width: 768px) {
+  .mainImg {
+    height: 300px;
+    width: 250px !important;
+    margin-right: 30%;
+  }
+  .item {
+    margin-left: 6% !important;
+  }
+}

@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+/*import { Injectable } from '@nestjs/common';
 import { UserService } from 'src/user/user.service';
 import { RegisterDTO } from './dto/register-user.dto';
 import * as bcrypt from 'bcryptjs';
@@ -53,3 +53,4 @@ export class AuthService {
     };
   }
 }
+*/

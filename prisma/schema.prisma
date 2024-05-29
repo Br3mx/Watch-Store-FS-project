@@ -30,40 +30,48 @@ model Watch {
   orders Order[]
 }
 
-model Client {
-  id String @id @default(uuid())
-  name String
-  address String
-  orders Order[]
-}
+// model Client {
+ // id String @id @default(uuid())
+ // name String
+ // address String
+ // orders Order[]
+//}
 
 model Order {
   id        String  @id @default(uuid())
   product   Watch? @relation(fields: [productId], references: [id], onDelete: SetNull)
   productId String?
-  client    Client? @relation(fields: [clientId], references: [id])
-  clientId   String?
+  //client    Client? @relation(fields: [clientId], references: [id])
+ // clientId   String?
+   
 
+ 
+  name String
+  address String
+  email String
+  phone String
+  quantity Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
-enum Role {
-  USER
-  ADMIN
-}
 
-model User {
-  id       String    @id @default(uuid())
-  login    String    @unique
-  email String @unique
-  role     Role      @default(USER)
-  password Password?
-  phone Int
-}
+//enum Role {
+ // USER
+ // ADMIN
+//}
 
-model Password {
-  id       String @id @default(uuid())
-  hashedPassword String
-  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId   String @unique
-}
+//model User {
+//  id       String    @id @default(uuid())
+//  login    String    @unique
+//  email String @unique
+//  role     Role      @default(USER)
+//  password Password?
+//  phone Int
+//}
+
+//model Password {
+//  id       String @id @default(uuid())
+ // hashedPassword String
+//  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+//  userId   String @unique
+//}

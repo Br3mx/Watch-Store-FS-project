@@ -4,7 +4,7 @@
   background-color: $color-dark;
   color: $color-main;
   width: 100%;
-  box-shadow: 0 2px 4px rgba($color-main, 0.3);
+  box-shadow: 0 2px 100px rgba($color-main, 0.3);
   // Padding to provide some space around the content
 }
 .p {
@@ -15,7 +15,7 @@
   margin-left: 260px;
 }
 .title {
-  margin-bottom: 10px;
+  margin-top: 1% !important;
   font-size: 1.2rem;
   color: $color-main;
   margin: 0;
@@ -42,4 +42,18 @@
 .active {
   background-color: $color-main;
   color: $color-light;
+}
+
+@media (max-width: 768px) {
+  .title {
+    display: none;
+  }
+  .catItem {
+    font-size: 10px;
+    padding: 10px 15px;
+  }
+  .catList {
+    padding-left: 0;
+    gap: 10px;
+  }
 }

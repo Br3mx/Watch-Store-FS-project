@@ -17,6 +17,7 @@ import Categories from '../Categories/Categories';
 import ButtonFavorite from '../ButtonFavorite/ButtonFavorite';
 import ButtonCart from '../ButtonCart/ButtonCart';
 import BanerMarks from '../BanerMarks/BanerMarks';
+import Video from '../Video/Video';
 
 const ITEMS_PER_PAGE = 4;
 
@@ -34,13 +35,11 @@ const AllProducts = () => {
     setCurrentPage(page);
   };
 
-  // Sprawdzenie, czy filteredProducts jest zdefiniowane przed użyciem
   let filteredProducts =
     selectedCategory === 'All'
       ? products
       : products.filter((product) => product.category === selectedCategory);
 
-  // Sprawdzenie, czy filteredProducts jest zdefiniowane i niepuste
   if (!filteredProducts) {
     filteredProducts = [];
   }
@@ -51,7 +50,7 @@ const AllProducts = () => {
   const currentProducts = filteredProducts.slice(startIndex, endIndex);
 
   return (
-    <>
+    <Container fluid>
       <Carousel className={style.carousel}>
         <Carousel.Item>
           <img
@@ -103,19 +102,8 @@ const AllProducts = () => {
           </Pagination>
         )}
         {currentProducts.map((product) => (
-          <Col
-            key={product.id}
-            xs={12}
-            sm={6}
-            md={4}
-            lg={3}
-            xl={3}
-            className={`mb-5`}
-          >
-            <Card
-              className={style.contCard}
-              style={{ width: '100%', margin: '0', padding: '0' }}
-            >
+          <Col key={product.id} xs={12} sm={0} md={4} lg={3} className={`mb-5`}>
+            <Card className={style.contCard}>
               <Row className={style.contImg}>
                 <Link to={`/products/${product.id}`}>
                   <Card.Img
@@ -125,17 +113,16 @@ const AllProducts = () => {
                   />
                 </Link>
                 <div className={style.overlay}>
-                  <div
-                    className={style.icons}
-                    style={{ display: 'flex', gap: '10%' }}
-                  >
+                  <div className={style.icons}>
                     <ButtonCart product={product} showLabel={false} />
                     <ButtonFavorite product={product} showLabel={false} />
                   </div>
                 </div>
               </Row>
               <Card.Body className={style.cardBody}>
-                <Card.Title>{product.name}</Card.Title>
+                <Card.Title className={style.prodTitle}>
+                  {product.name}
+                </Card.Title>
                 <Card.Text className="mb-3 text-muted">
                   {product.model}
                 </Card.Text>
@@ -158,9 +145,10 @@ const AllProducts = () => {
           </Col>
         ))}
       </Row>
+      <Video />
       <BanerMarks />
       {filteredProducts.length === 0 && <p>Products not found</p>}
-    </>
+    </Container>
   );
 };
 

@@ -1,4 +1,4 @@
-import {
+/*import {
   Body,
   Controller,
   Delete,
@@ -21,6 +21,7 @@ export class AuthController {
   @Post('/register')
   @UseInterceptors(NoFilesInterceptor)
   async register(@Body() registerData: RegisterDTO) {
+    console.log('registerData:', registerData);
     return this.authService.register(registerData);
   }
 
@@ -47,3 +48,4 @@ export class AuthController {
     }
   }
 }
+*/

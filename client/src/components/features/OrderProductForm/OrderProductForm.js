@@ -12,7 +12,7 @@ import { FaTimes } from 'react-icons/fa';
 
 const OrderProductForm = () => {
   const { productId } = useParams();
-  const { clientId } = useParams();
+  //const { clientId } = useParams();
   const product = useSelector((state) => getProductById(state, productId));
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
@@ -45,10 +45,18 @@ const OrderProductForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      // Parsowanie quantity na liczbę
+      const parsedQuantity = parseInt(formData.quantity, 10);
+
+      // Sprawdzenie, czy parsedQuantity jest liczbą
+      if (isNaN(parsedQuantity)) {
+        console.error('Quantity is not a number');
+        return; // Przerwanie działania funkcji w przypadku błędnych danych
+      }
+
       const orderData = {
         productId: productId,
-        quantity: formData.quantity,
-        clientId: clientId,
+        quantity: parsedQuantity, // Używanie sparsowanej liczby
         name: formData.name,
         email: formData.email,
         address: formData.address,

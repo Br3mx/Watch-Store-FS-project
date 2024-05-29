@@ -4,5 +4,4 @@ const initialState = {
   favorites: [],
   cart: [],
   orders: [],
-  user: null,
 };
