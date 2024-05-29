@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import {
-  FaFacebook,
-  FaInstagram,
-  FaMailBulk,
-  FaPhone,
-  FaTwitter,
-} from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { FaFacebook, FaInstagram, FaPhone, FaTwitter } from 'react-icons/fa';
 import style from './Contact.module.scss';
 
 const Contact = () => {

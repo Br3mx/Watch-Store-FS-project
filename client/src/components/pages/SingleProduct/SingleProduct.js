@@ -4,7 +4,6 @@ import { getProductById } from '../../../redux/productsRedux'; // Upewnij się, 
 import { Card, Carousel, Col, Container, Row } from 'react-bootstrap';
 import style from './SingleProduct.module.scss';
 import { IMGS_URL } from '../../../config';
-import { FaShoppingCart } from 'react-icons/fa';
 import BuyNow from '../../features/BuyNow/BuyNow';
 
 import ButtonFavorite from '../../features/ButtonFavorite/ButtonFavorite';

@@ -1,14 +1,12 @@
 import { Navbar, Nav } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
-import { getUser, logOut, logOutUser } from '../../../redux/userRedux';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import style from './NavBar.module.scss';
 import logo from './icon/logo764.png';
-import { FaClock, FaHeart, FaShoppingCart } from 'react-icons/fa';
+import { FaHeart, FaShoppingCart } from 'react-icons/fa';
 import Logo from '../../features/Logo/Logo';
 import { useEffect, useState } from 'react';
 const NavBar = () => {
-  //const user = useSelector(getUser);
   const cart = useSelector((state) => state.cart);
 
   const validCart = cart.filter(
@@ -16,9 +14,6 @@ const NavBar = () => {
   );
   const cartCount = validCart.length;
   const [scrolled, setScrolled] = useState(false);
-
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
