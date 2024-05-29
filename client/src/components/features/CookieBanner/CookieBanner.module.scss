@@ -1,0 +1,42 @@
+/* CookieBanner.module.scss */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Przezroczysty czarny */
+  backdrop-filter: blur(5px); /* Efekt rozmycia */
+  z-index: 999; /* Mniejszy niż z-index banera */
+}
+
+.cookieBanner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+.cookieBanner p {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.cookieBanner button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cookieBanner button:hover {
+  background-color: #45a049;
+}
